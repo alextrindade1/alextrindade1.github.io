@@ -1,0 +1,152 @@
+<html>
+
+<head>
+<title>TS Data</title>
+</head>
+
+<body bgcolor=white>
+<basefont size=3>  <!-- *** use 2 for printing *** -->
+<h2 align=center><font face="New Century Schoolbook" color=black>Time Series Data Sets</font></h2>
+<p>
+This is a repository of datasets sometimes used in my time series courses for data analysis projects. Here are some accompanying files:
+<ul> 
+<li> An article giving guidance on how to write a scientific report: </font> <a
+href="HoetingGivens.pdf">HoetingGivens.pdf</a>.
+<li> An example of the type of write-up that is expected from students: </font> <a
+href="paper.pdf">pdf file</a>, </font> <a
+href="paper.tex">latex file</a>. 
+</ul> 
+
+
+<p>
+<h3>Financial Time Series Course (Based on Tsay's AFTS 2010 book)</h3>
+<ul> 
+<li><a href="FTSdatasets/Amazon.csv">Amazon.csv</a>: Log returns of daily Amazon (AMZN) closing prices from January 2, 2004 to May 19, 2017.
+<li><a href="FTSdatasets/Boeing.csv">Boeing.csv</a>: (Aggregation of the 5 files of Exercises 5.7 to 5.10, adding a date and time stamp). 
+<li><a href="FTSdatasets/Gold.csv">Gold.csv</a>: Daily gold fixing price (10:30 am London time) in London Bullion Market in US dollars per Troy ounce from January 3, 1995 to November 10, 2016.
+<li><a href="FTSdatasets/d-aapl0413.txt">d-aapl0413.txt</a>: 
+<li><a href="FTSdatasets/d-bhp0206.txt">d-bhp0206.txt</a>: 
+<li><a href="FTSdatasets/d-cat0716-3dx.txt">d-cat0716-3dx.txt</a>: 
+<li><a href="FTSdatasets/d-cdsALL.txt">d-cdsALL.txt</a>: 
+<li><a href="FTSdatasets/d-cdsJPM.txt">d-cdsJPM.txt</a>: 
+<li><a href="FTSdatasets/d-exuseu.txt">d-exuseu.txt</a>: 
+<li><a href="FTSdatasets/d-exuseu-0516.txt">d-exuseu-0516.txt</a>: 
+<li><a href="FTSdatasets/d-ff-factors.txt">d-ff-factors.txt</a>: 
+<li><a href="FTSdatasets/dgnp82.txt">dgnp82.txt</a>: 
+<li><a href="FTSdatasets/d-ibm-0110.txt">d-ibm-0110.txt</a>: 
+<li><a href="FTSdatasets/d-ibmbaml3a-0110.txt">d-ibmbaml3a-0110.txt</a>: 
+<li><a href="FTSdatasets/d-ibm-rq.txt">d-ibm-rq.txt</a>: 
+<li><a href="FTSdatasets/d-ibmvwew6202.txt">d-ibmvwew6202.txt</a>: 
+<li><a href="FTSdatasets/d-sbux3dx-0715.txt">d-sbux3dx-0715.txt</a>: 
+<li><a href="FTSdatasets/d-vale0206.txt">d-vale0206.txt</a>: 
+<li><a href="FTSdatasets/d-vix0411.csv">d-vix0411.csv</a>: 
+<li><a href="FTSdatasets/ibm91-ads.txt">ibm91-ads.txt</a>: 
+<li><a href="FTSdatasets/ibm91-adsx.txt">ibm91-adsx.txt</a>: 
+<li><a href="FTSdatasets/m-aapl3dx-0115.txt">m-aapl3dx-0115.txt</a>: 
+<li><a href="FTSdatasets/m-bndpgsp-6211.txt">m-bndpgsp-6211.txt</a>: 
+<li><a href="FTSdatasets/m-dec12910-6114.txt">m-dec12910-6114.txt</a>: 
+<li><a href="FTSdatasets/m-gmsp6708.txt">m-gmsp6708.txt</a>: 
+<li><a href="FTSdatasets/m-houst-5917.txt">m-houst-5917.txt</a>: 
+<li><a href="FTSdatasets/m-ibm2609.txt">m-ibm2609.txt</a>: 
+<li><a href="FTSdatasets/m-ibm-6815.txt">m-ibm-6815.txt</a>: 
+<li><a href="FTSdatasets/m-ibmln2699.txt">m-ibmln2699.txt</a>: 
+<li><a href="FTSdatasets/m-intc7303.txt">m-intc7303.txt</a>: 
+<li><a href="FTSdatasets/m-kovw-5116.txt">m-kovw-5116.txt</a>: 
+<li><a href="FTSdatasets/m-pg6116-3dx.txt">m-pg6116-3dx.txt</a>: 
+<li><a href="FTSdatasets/m-tb3ms.txt">m-tb3ms.txt</a>: 
+<li><a href="FTSdatasets/m-tb3n6.txt">m-tb3n6.txt</a>: 
+<li><a href="FTSdatasets/m-tb6ms.txt">m-tb6ms.txt</a>: 
+<li><a href="FTSdatasets/q-earn-jnj.txt">q-earn-jnj.txt</a>: 
+<li><a href="FTSdatasets/q-gdp-ukcaus.txt">q-gdp-ukcaus.txt</a>: 
+<li><a href="FTSdatasets/q-gdpc96.txt">q-gdpc96.txt</a>: 
+<li><a href="FTSdatasets/q-gdpun.txt">q-gdpun.txt</a>: 
+<li><a href="FTSdatasets/q-ko-earns8309.txt">q-ko-earns8309.txt</a>: 
+<li><a href="FTSdatasets/sp500.txt">sp500.txt</a>: 
+<li><a href="FTSdatasets/taq-cat-cpch-jan042010.txt">taq-cat-cpch-jan042010.txt</a>: 
+<li><a href="FTSdatasets/taq-cat-t-jan042010.txt">taq-cat-t-jan042010.txt</a>: 
+<li><a href="FTSdatasets/taq-cat-t-jan04t082010.txt">taq-cat-t-jan04t082010.txt</a>: 
+<li><a href="FTSdatasets/taq-jnj-t-oct4t152010.txt">taq-jnj-t-oct4t152010.txt</a>: 
+<li><a href="FTSdatasets/taq-wba-cpch-feb06-2017.txt">taq-wba-cpch-feb06-2017.txt</a>: 
+<li><a href="FTSdatasets/taq-wba-feb6to17-2017.txt">taq-wba-feb6to17-2017.txt</a>: 
+<li><a href="FTSdatasets/w-gs1n36299.txt">w-gs1n36299.txt</a>: 
+</ul> 
+
+<p>
+<h3>Weather/Climate</h3>
+<ul> 
+<li><a href="Thrips.csv">Thrips.csv</a>: Apple-blossom thrips (<i>Thrips imaginis</i>) and climatic variables, recorded in Australia over the period from April 1932 to
+December 1938 (used for class projects).
+<li><a href="gtemp.txt">gtemp.txt</a>: monthly global temperature anomalies from
+January 1880 to August 2010, 1568 observations over 131 years (used for class projects).
+<li><a href="wind.txt">wind.txt</a>: 1008 observations of the maximum
+wind speed (m/s) over 10-minute intervals recorded at
+a height of 40m above ground level at a particular location (used for class projects).
+<!--
+The first 1,008 observations from the variable "winddata$v1_40m_max", consisting of the maximum wind speed recorded over 10-minute intervals collected by a meteorological mast. Source: "winddata" in R package <b>bReeze</b>.
+-->
+<li><a href="AnnualGlobalTemps1856-2005.tsm">AnnualGlobalTemps1856-2005.tsm</a>: Global annual average temperatures from 1856 to 2005 (degrees Celsius), expressed as anomalies from the average over the period 1961-1990. Source: <a href="http://www.cru.uea.ac.uk/cru/">CRU</a>.
+<li><a href="MonthlyArcticSeaIce1979-2005.tsm">MonthlyArcticSeaIce1979-2005.tsm</a>: Monthly Arctic sea ice extent from Jan 1979 to Dec 2005 (million square kilometers). I have filled in two missing values in the original data in an "appropriate" way. Source: <a href="http://nsidc.org/">NSIDC</a>.
+<li><a href="MonthlyArcticSeaIce1986-2005.tsm">MonthlyArcticSeaIce1986-2005.tsm</a>: Truncated version of MonthlyArcticSeaIce1979-2005.tsm, Jan 1986 to Dec 2005 (240 values).
+</ul> 
+
+
+<p>
+<h3>Economics/Finance</h3>
+<ul> 
+<li><a href="LouisGasSpotPrice.tsm">LouisGasSpotPrice.tsm</a>: Monthly observations on Louisiana spot prices for natural gas from January 1988 to October 1991 (dollars per million British thermal units). Source: <a href="http://astro.temple.edu/~wwei/data.html">William Wei's book</a>.
+<li><a href="OklaGasSpotPrice.tsm">OklaGasSpotPrice.tsm</a>: Monthly observations on Oklahoma spot prices for natural gas from January 1988 to October 1991 (dollars per million British thermal units). Source: <a href="http://astro.temple.edu/~wwei/data.html">William Wei's book</a>.
+<li><a href="MonthlyLogReturnsIntel.tsm">MonthlyLogReturnsIntel.tsm</a>:
+Monthly log returns on Intel stock from January 1973 to December 1997. Source:
+"Analysis of Financial Time Series", R.S. Tsay, Wiley (2002).
+<li><a href="sp500.tsm">SP500.tsm</a>:
+Monthly excess returns of
+  the S&P 500 Index starting January 1926. (And the next 12 returns <a href="sp500os.txt">SP500os.txt</a>.)
+<li><a href="monthly-housing.csv">monthly-housing.csv</a>:
+Monthly housing price index (hpi) and number of existing homes sold (numsold, in thousands)
+in the USA from January 1991 to April 2013. (Courtesy: Meichuang Hu.)
+</ul> 
+
+<p>
+<h3>Environment/Biology/Medicine</h3>
+<ul> 
+<li><a href="Sunspots.txt">Sunspots.txt</a>: Annual count of sunspots for the years 1770-1869 (the Wolfer sunspot numbers). Source: Brockwell & Davis, 2nd ed., (1991).
+<li><a href="tundra.tsm">tundra.tsm</a>: Average maximum temperature over the
+month of February for the years 1895-1993 in an area of the USA whose
+vegetation is characterized as tundra. Source: Brockwell & Davis book.
+<li><a href="SoIndex.tsm">SoIndex.tsm</a>: Monthly observations of the Southern Oscillation Index from January 1968 to December 1987 (anomalies), an environmental variable that measures changes in air pressure related to sea surface temperature in the central Pacific. Source: <a href="http://www.stat.pitt.edu/stoffer/tsa2">Shumway & Stoffer's book</a>.
+<li><a href="Recruit.tsm">Recruit.tsm</a>: Monthly numbers of new fish hatching in a certain region of the Pacific Ocean, recorded by the Pacific Environmental Fisheries Group from January 1968 to December 1987. Source: <a href="http://www.stat.pitt.edu/stoffer/tsa2">Shumway & Stoffer's book</a>.
+<li><a href="ThaiDrugUse.tsm">ThaiDrugUse.tsm</a>: Monthly rate of prescription drug usage in Thailand from Jan 2000 to Dec 2003 (higher numbers mean greater drug usage). Source: Penkarn Kanjanarat, Ph.D. Dissertation, Pharmacy Health Care Administration, College of Pharmacy, University of Florida, 2005.
+<li><a href="ThaiPolicy.tsm">ThaiPolicy.tsm</a>: Dummy variable file to accompany ThaiDrugUse.tsm. Consists of 17 zeros with ones beginning on the 18th month, the time when a policy came into effect making it cheaper for the uninsured to purchase prescription drugs.
+<li><a href="BeaverTemp.tsm">BeaverTemp.tsm</a>: Body temperature (degrees Celsius) of a beaver (<i>Castor Canadensis</i>) measured every 10 minutes over the course of 24 hours. Source: Reynolds (1994), "Time series analyses of beaver body temperatures", in <i>Case Studies in Biometry</i>, Lange et al. (eds.), New York: Wiley. (Available as R dataset "beaver2".)
+<li><a href="BeaverActiv.tsm">BeaverActiv.tsm</a>: Dummy variable file to accompany BeaverTemp.tsm. Consists of 38 zeros with ones beginning on the 39th time period, indicating whether the animal is inside (0) or outside (1) its retreat.
+<li><a href="CardioVascMort.tsm">CardioVascMort.tsm</a>: Average weekly
+cardiovascular mortality in Los Angeles County over the 10-year period
+1970-1979. Source: <a href="http://www.stat.pitt.edu/stoffer/tsa2">Shumway & Stoffer's book</a>.
+<li><a href="whale.txt">whale.txt</a>: Variables pertaining to nursing behavior of newborn beluga whale calves Hudson & Casey.
+
+</ul> 
+
+<p>
+<h3>Miscellaneous</h3>
+<ul> 
+<li><a href="Pi_hex_digits500.tsm">PiHexDigits500.tsm</a>: The first 500 digits in the hexadecimal (base 16) expansion of the irrational number pi. Source: <a href="http://www.joyofpi.com/pilinks.html">Joy of Pi</a>.
+</ul> 
+
+
+</body>
+
+</html>
+
+
+
+
+<!-- #########################################
+
+<spacer type=vertical size=10>
+<font color=blue>Set 6:</font> 10.4, 10.6, 10.7 (do only for first two
+series; problem 7.9 gives details about the data). Due by noon on Mon <font
+color=red>December 8</font> in my mailbox. 
+<br> <spacer type=vertical size=10>
+
+
+-->
