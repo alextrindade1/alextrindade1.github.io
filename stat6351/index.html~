@@ -1,0 +1,165 @@
+<html>
+
+<head>
+<title>STAT 6351 - Trindade</title>
+</head>
+
+<body bgcolor=lightblue>
+<basefont size=3>  <!-- *** use 2 for printing *** -->
+<h2 align=center>STAT 6351 -- Applied Time Series -- Fall 2025</h2>
+
+
+<br>
+<p>
+<h3>Basic Information</h3>
+Course instructor: 
+<a
+href="http://www.math.ttu.edu/~atrindad">Dr. Alex
+Trindade</a>, 233 Mathematics & Statistics Building. </br>
+E-mail: alex.trindade"at"ttu.edu. </br>
+Course Meets: TR 3:30-4:50 in Math 015.</br> 
+Office Hours: TR 2:00-3:00, W 4:00-5:00, or by appointment.</br> 
+</ul> 
+
+
+<p>
+<h3>Books</h3> 
+<li> <i>Analysis of Financial Time Series</i>, by Ruey Tsay (2010, 3rd ed.), Wiley. <b>(Required and referred to as AFTS for short.)</b>
+<li> <i>Modeling Financial Time Series with S-PLUS</i>, by Zivot & Wang (2006, 2nd ed.), Springer. 
+<li> <i>Multivariate Time Series Analysis</i>, by Ruey Tsay (2014), Wiley. 
+</ul>
+
+
+<p>
+<h3>Course Objectives and Syllabus</h3> 
+The course will cover theory and methods for <b>financial Time Series (FTS)</b> analysis.  Prerequisites: Statistical "maturity", usually attained after having taken several advanced methodology courses, a minimal list being STAT 5329 (Math-Stat) and STAT 5371 (Regression). The intended coverage is the first 8 chapters of AFTS, divided into 10 lectures as detailed below. A brief outline of the coverage is as follows:
+<ul>
+<li> Ch 1 (Introduction): basic characteristics of FTS data, moments, autocorrelation, stationarity, tests for serial correlation.
+<li> Ch 2 (Linear Time Series): ARMA, ARIMA, and seasonal versions, time series regression. 
+<li> Ch 3 (Conditional Heteroscedastic Models): ARCH/GARCH and its many variants, random coefficients AR, stochastic volatility, long memory. 
+<li> Ch 4 (Nonlinear Models and Their Applications): TAR/STAR models, markov switching, nonparametric methods, functional coefficients AR, neural networks, etc., nonlinearity tests, modeling & forecasting. 
+<li> Ch 5 (High-Frequency Data Analysis and Market Microstructure): Nonsynchronous trading, bid–ask spread, empirical characteristics of transactions, models for price changes, duration models. 
+<li> Ch 7 (Extreme Values, Quantile Estimation, and Value at Risk): Value at Risk, RiskMetrics, Expected Shortfall, Econometric Approach to VaR Calculation, Quantile Estimation, Extreme Value Theory, Extreme Value Approach to VaR, New Approach Based on the Extreme Value Theory, The Extremal Index.
+<li> Ch 8 (Multivariate Time Series Analysis and Its Applications): Weak Stationarity and Cross-Correlation Matrices, Vector Autoregressive Models, Vector Moving-Average Models, Vector ARMA Models, Unit-Root Nonstationarity and Cointegration, An Error Correction Form, Cointegrated VAR Models. 
+</ul> 
+
+
+<p>
+<h3>Expected Student Learning Outcomes</h3>
+The course will cover the main contemporary state-of-the-art methodological tools for modeling financial time series data. Students will learn the basics of financial time series, including high-frequency data and big finance data, simple models and methods for analyzing financial data (both for mean and volatility evolutions), with particular emphasis on various approaches to volatility modeling, investigate dependence between asset returns, including Kendall tau, Spearman's
+rho, and tail dependence, assessment of market and credit risk, and study methods for calculating Value at Risk (VaR) and expected shortfall, understand proper use and limits of econometric methods in business and finance, and finally, will gain experience in handling financial data and big finance data.
+</ul>
+
+
+<p>
+<h3>Methods of Assessing the Expected Learning Outcomes</h3>
+The expected learning outcomes for the course will be assessed through a mix of homework assignments and tests. The course grade will
+be determined from homework assignments (35%), a midterm test (25%), a data analysis project (10%), and a comprehensive final exam (30%). The traditional grading scale will be used:
+<ul>
+<li> A: 90-100%.
+<li> B: 80-89%. 
+<li> C: 70-79%. 
+<li> D: 60-69%. 
+<li> F: 0-59%. 
+</ul> 
+The test schedule is as follows: 
+<ul>
+<li> Midterm: Thu Oct 17 (after Hwk 7).
+<li> Project due date: Tue Nov 20.
+<li> Final Exam: Take home.
+</ul> 
+
+
+<h3>Lecture Notes</h3>
+<ul> 
+<li> <a href="lec0.pdf">Lecture 0</a>. Background pre-course reading on R & packages. 
+<li> <a href="Lec1.pdf">Lecture 1 (41 pp.)</a>. Introduction (examples, returns and its distributional properties, moments, likelihood, stationarity, autocorrelation, linear time series models).
+<li> <a href="lec2.pdf">Lecture 2 (27 pp.)</a>. ARMA models and unit roots.
+<li> <a href="Lec3.pdf">Lecture 3 (20 pp.)</a>. Seasonality, time series regression, long memory models.
+<li> <a href="lec4.pdf">Lecture 4 (22 pp.)</a>. Univariate volatility models (GARCH to IGARCH).
+<li> <a href="lec5.pdf">Lecture 5 (12 pp.)</a>. More volatility models (GARCHM to long memory stochastic volatility).
+<li> <a href="lec6.pdf">Lecture 6 (8 pp.)</a>. Alternative approaches to estimation of volatility (semi- and non-parametric).
+<li> <a href="lec7.pdf">Lecture 7 (9 pp.)</a>. Nonlinear models.
+<li> <a href="Lec8.pdf">Lecture 8 (10 pp.)</a>. High frequency data and market microstructure.
+<li> <a href="lec9.pdf">Lecture 9 (41 pp.)</a>. Risk management (measures of risk, value-at-risk, expected shortfall, methods for quantifying risk based on extreme value theory).  
+<li> <a href="Lec10.pdf">Lecture 10 (25 pp.)</a>. Multivariate models for the conditional mean: vector ARMA, impulse response analysis, cointegration.
+<li> <a href="Lec11.pdf">Lecture 11 (12 pp.)</a>. Multivariate volatility models: GARCH and variants, dynamic conditional correlation (DCC) models, copula based models.
+</ul>
+
+
+<p>
+<h3>Homework Assignments</h3>
+There will be weekly homework sets covering portions of the following 7 Assignments. 
+<ul> 
+<li> <a href="Ass1.pdf">Assignment 1</a>.
+<li> <a href="Ass2.pdf">Assignment 2</a>.
+<li> <a href="Ass3.pdf">Assignment 3</a>.
+<li> <a href="Ass4.pdf">Assignment 4</a>.
+<li> <a href="Ass5.pdf">Assignment 5</a>.
+<li> <a href="Ass6.pdf">Assignment 6</a>.
+<li> <a href="Ass7.pdf">Assignment 7</a>.
+</ul>
+All work should be either handed in or uploaded to <a href="https://www.depts.ttu.edu/online/canvas/">Canvas</a>. If handing in physically the deadline is the Thursday class time. 
+<p>
+<ul> 
+<li> Hwk 0: Read Lecture 0 and familiarize yourself with the basics of R, especially the "quantmod" package.
+<li> Hwk 1: Assignment 1: #1 and #3. (Due Sat Aug 30 on Canvas.)
+</ul>
+
+
+<p>
+<h3>Data Analysis Project</h3>
+Will involve searching the web to find suitable datasets to analyze via the methods in the course. More details later. Project due date: see above.
+
+
+<h3>Software & Data</h3>
+I will use R as the primary software tool. For details on R see my <a
+href="http://www.math.ttu.edu/~atrindad/software">statistical computing</a> page. 
+<ul> 
+<li> Brief <a href="IntroPackages.pdf">introduction to packages</a>. 
+<li> Access to <a href="https://faculty.chicagobooth.edu/ruey-s-tsay/research/analysis-of-financial-time-series-3rd-edition">AFTS datasets</a>. 
+<li> Access to <a href="http://www.math.ttu.edu/~atrindad/tsdata">datasets</a> (not found in the book). 
+<li> <a href="Rscripts">R scripts</a> used in lectures. 
+<li> Additional <a href="Rprograms">R programs</a> (not in packages). 
+</ul>
+
+
+<p>
+<p>
+<h3>Policies</h3>
+<ul>
+<li> Required/Recommended Texas Tech Policies can be found on the
+  Canvas course page.
+
+<li><b>Use of Generative AI Tools</b>. The use of generative AI (GAI) for working assignments is not forbidden, but it should be used with discretion. I view GAI as another way to collaborate with peers on solving problems. This can used incorrectly, e.g. when you simply copy your smart friends work (or ask GAI to solve the problem directly), or can be used correctly, e.g., when you discuss with friends the results/steps needed to find a solution after you have put some thought into it (or use GAI more like a search engine to query side questions and digest literature). Remember: you do NOT want to surrender your thought process to the "tool" (friend or GAI); the "tool" will not be available during tests!
+
+<li><b>Electronic Devices in Tests</b>. In the spirit of keeping costs down, I will permit the usage of apps on smart devices (phones, tablets, laptops, etc.), but any kind of communication or accessing of the web via these devices is forbidden.
+ 
+<li><b>Collaboration</b>. My policies on this are as follows.
+  <ul>
+  <li><u>Homeworks</u>: Discussion with peers regarding material/concepts covered in the
+  course is permitted, and is encouraged since it usually leads to greater comprehension. However, each person must write up his/her own
+  solution to a particular problem, and not simply have someone else do it for them.
+  <li><u>Tests</u>: Any form of collaboration on tests, including e-device communication or trying to see what the person next to you is writing, is strictly forbidden and will not be tolerated.  
+</ul>
+ 
+
+</ul>
+
+
+
+
+<hr>
+<a href="#top">top of page</a><br>
+<br>
+
+</body>
+
+</html>
+
+
+
+<!-- #########################################
+
+
+-->

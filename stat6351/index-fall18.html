@@ -1,0 +1,179 @@
+<html>
+
+<head>
+<title>STAT 5376 - Trindade</title>
+</head>
+
+<body bgcolor=lightblue>
+<basefont size=3>  <!-- *** use 2 for printing *** -->
+<h2 align=center>STAT 5376 -- Financial Time Series -- Fall 2018</h2>
+
+
+<br>
+<p>
+<h3>Basic Information</h3>
+Course instructor: 
+<a
+href="http://www.math.ttu.edu/~atrindad">Dr. Alex
+Trindade</a>, 228 Mathematics & Statistics Building. </br>
+E-mail: alex.trindade"at"ttu.edu. </br>
+Course Meets: MWF 12:00-12:50 in Math 015.</br> 
+Office Hours: MWF 2:00-4:00 pm, or by appointment.</br> 
+</ul> 
+
+
+<p>
+<h3>Books</h3> 
+<li> <a
+href="http://faculty.chicagobooth.edu/ruey.tsay/teaching/fts3/">Analysis of Financial Time Series</a>, by Ruey Tsay (2010, 3rd ed.), Wiley. <b>(Required and referred to as AFTS for short.)</b>
+<li> <i>Modeling Financial Time Series with S-PLUS</i>, by Zivot & Wang (2006, 2nd ed.), Springer. 
+<li> <i>New Introduction to Multiple Time Series Analysis</i>, by Lutkepohl (2005), Springer. 
+</ul>
+
+
+<p>
+<h3>Course Objectives and Syllabus</h3> 
+The course will cover theory and methods for <b>financial Time Series (FTS)</b> analysis.  Prerequisites: Statistical "maturity", usually attained after having taken several advanced methodology courses, a minimal list being STAT 5329 (Math-Stat) and STAT 5371 (Regression). The intended coverage is the first 8 chapters of AFTS, divided into 10 lectures as detailed below. A brief outline of the coverage is as follows:
+<ul>
+<li> Ch 1 (Introduction): basic characteristics of FTS data, moments, autocorrelation, stationarity, tests for serial correlation.
+<li> Ch 2 (Linear Time Series): ARMA, ARIMA, and seasonal versions, time series regression. 
+<li> Ch 3 (Conditional Heteroscedastic Models): ARCH/GARCH and its many variants, random coefficients AR, stochastic volatility, long memory. 
+<li> Ch 4 (Nonlinear Models and Their Applications): TAR/STAR models, markov switching, nonparametric methods, functional coefficients AR, neural networks, etc., nonlinearity tests, modeling & forecasting. 
+<li> Ch 5 (High-Frequency Data Analysis and Market Microstructure): Nonsynchronous trading, bid–ask spread, empirical characteristics of transactions, models for price changes, duration models. 
+<li> Ch 6 (Continuous-Time Models and Their Applications): Some Continuous-Time Stochastic Processes, Ito’s Lemma, Distributions of Stock Prices and Log Returns, Derivation of Black–Scholes Differential Equation, Black–Scholes Pricing Formulas, Extension of Ito’s Lemma, Stochastic Integral, Jump Diffusion Models, Estimation of Continuous-Time Models. 
+<li> Ch 7 (Extreme Values, Quantile Estimation, and Value at Risk): Value at Risk, RiskMetrics, Expected Shortfall, Econometric Approach to VaR Calculation, Quantile Estimation, Extreme Value Theory, Extreme Value Approach to VaR, New Approach Based on the Extreme Value Theory, The Extremal Index.
+<li> Ch 8 (Multivariate Time Series Analysis and Its Applications): Weak Stationarity and Cross-Correlation Matrices, Vector Autoregressive Models, Vector Moving-Average Models, Vector ARMA Models, Unit-Root Nonstationarity and Cointegration, An Error Correction Form, Cointegrated VAR Models. 
+</ul> 
+
+
+<p>
+<h3>Expected Student Learning Outcomes</h3>
+The course will cover the main contemporary state-of-the-art methodological tools for modeling financial time series data. Students will learn the basics of financial time series, including high-frequency data and big finance data, simple models and methods for analyzing financial data (both for mean and volatility evolutions), with particular emphasis on various approaches to volatility modeling, investigate dependence between asset returns, including Kendall tau, Spearman's
+rho, and tail dependence, assessment of market and credit risk, and study methods for calculating Value at Risk (VaR) and expected shortfall, understand proper use and limits of econometric methods in business and finance, and finally, will gain experience in handling financial data and big finance data.
+</ul>
+
+
+<p>
+<h3>Methods of Assessing the Expected Learning Outcomes</h3>
+The expected learning outcomes for the course will be assessed through a mix of homework assignments and tests. The course grade will
+be determined from homework assignments (20%), two midterm tests (25% each), and a comprehensive final exam (30%). The traditional grading scale will be used:
+<ul>
+<li> A: 90-100%.
+<li> B: 80-89%. 
+<li> C: 70-79%. 
+<li> D: 60-69%. 
+<li> F: 0-59%. 
+</ul> 
+The test schedule is as follows: 
+<ul>
+<li> Test 1: Fri Oct 5 (after Hwk 5).
+<li> Test 2: Nov 9 (after Hwk 9).
+<li> Final Exam: Wed 12 December, 13:30-16:00.
+</ul> 
+
+
+<h3>Lecture Notes</h3>
+<ul> 
+<li> <a href="lec0.pdf">Lecture 0</a>. Background pre-course reading on R & packages. 
+<li> <a href="lec1.pdf">Lecture 1</a>. Introduction (examples, returns and its distributional properties, moments, likelihood, stationarity, autocorrelation, linear time series models).
+<li> <a href="lec2.pdf">Lecture 2</a>. ARMA models and unit roots.
+<li> <a href="lec3.pdf">Lecture 3</a>. Seasonality, time series regression, long memory models.
+<li> <a href="lec4.pdf">Lecture 4</a>. Univariate volatility models (GARCH to IGARCH).
+<li> <a href="lec5.pdf">Lecture 5</a>. More volatility models (GARCHM to long memory stochastic volatility).
+<li> <a href="lec6.pdf">Lecture 6</a>. Alternative approaches to estimation of volatility (semi- and non-parametric).
+<li> <a href="lec7.pdf">Lecture 7</a>. Nonlinear models and market microstructure.
+<li> <a href="lec8.pdf">Lecture 8</a>. Stochastic diffusions and option pricing.
+<li> <a href="lec9.pdf">Lecture 9</a>. Risk management (measures of risk, value-at-risk, expected shortfall, methods for quantifying risk based on extreme value theory).  
+<li> <a href="lec10.pdf">Lecture 10</a>. Multivariate time series (vector ARMA, cointegration, Granger causality, multivariate GARCH and variants).
+</ul>
+
+
+<p>
+<h3>Homework Assignments</h3>
+There will be weekly Assignment Sets. All work handed in must be <b>stapled</b> together. No late submissions will be accepted.
+<p>
+<ul> 
+<li> Set 1 (due Fri Aug 31): <a href="Ass1.pdf">Assignment 1</a>, Questions #1 and #5.
+<li> Set 2 (due Fri Sep 7): <a href="Ass1.pdf">Assignment 1</a>, Questions #3 and #4.
+<li> Set 3 (due Fri Sep 14): <a href="Ass2.pdf">Assignment 2</a>, Questions #1.
+<li> Set 4 (due Fri Sep 21): <a href="Ass2.pdf">Assignment 2</a>, Questions #2, and #3.
+<li> Set 5 (due Fri Sep 28): <a href="Ass3.pdf">Assignment 3</a>, Questions #1, and #3.
+<li> Set 6 (due Fri Oct 12): <a href="Ass4.pdf">Assignment 4</a>, Questions #1 and #2.
+<li> Set 7 (due Fri Oct 19): <a href="Ass4.pdf">Assignment 4</a>, Questions #3 and #5, and Problem 3.2 in AFTS.
+<li> Set 8 (due Fri Oct 26): <a href="Ass5.pdf">Assignment 5</a>, Questions #1 and #2, and Problem 4.2 in AFTS.
+<li> Set 9 (due Fri Nov 2): <a href="Ass5.pdf">Assignment 5</a>, Questions #3 and #4.
+<li> Set 10 (due Mon Nov 26): <a href="Ass6.pdf">Assignment 6</a>, Questions #1, #2, #3.
+<li> Set 11 (due Mon Dec 3): Problem 8.7 in AFTS.
+</ul>
+
+
+<h3>Software & Data</h3>
+I will use R as the primary software tool. For details on R see my <a
+href="http://www.math.ttu.edu/~atrindad/software">statistical computing</a> page. 
+<ul> 
+<li> Brief <a href="IntroPackages.pdf">introduction to packages</a>. 
+<li> Access to <a href="http://www.math.ttu.edu/~atrindad/tsdata">datasets</a> (not found in the book). 
+<li> <a href="Rscripts">R scripts</a> used in lectures. 
+<li> Additional <a href="Rprograms">R programs</a> (not in packages). 
+</ul>
+
+
+<p>
+<p>
+<h3>Policies</h3>
+<ul>
+<li><b>Class Attendance</b>. Your attendance alone will not impact your grade,
+but missing exams and assignments will. Whether an absence is excused or
+unexcused is determined solely by me, with the exception of absences due to
+religious observance and officially approved trips (see below). 
+  <ul>
+  <li><u>Make-up Exams</u>: These may be granted in exceptional circumstances
+  if you provide me with a valid excuse (such as a note from a physician, an
+  obituary, etc.). 
+  <li><u>Absence due to religious observance</u>: The Texas Tech University Catalog states that a student shall be excused from attending classes or other required activities, including examinations, for the observance of a religious holy day, including travel for that purpose. A student who intends to observe a religious holy day should make that intention known in writing to the instructor prior to the absence. A student who is absent from classes for the observance of a religious holy day shall be allowed to take an examination or complete an assignment scheduled for that day within a reasonable time after the absence.
+  <li><u>Absence due to officially approved trips</u>: The Texas Tech University Catalog states that the department chairpersons, directors, or others responsible for a student representing the university on officially approved trips should notify the student's instructors of the departure and return schedules in advance of the trip. The instructor so notified must not penalize the student, although the student is responsible for material missed. Students absent because of university business must be given the same privileges as other students. 
+  </ul>
+
+<li><b>Illness and Death Notification</b>. The Center for Campus Life is responsible for notifying the campus community of student illnesses, immediate family deaths and/or student death. Generally, in cases of student illness or immediate family deaths, the notification to the appropriate campus community members occur when a student is absent from class for four (4) consecutive days with appropriate verification. It is always the student's responsibility for missed class assignments and/or course work during their absence. The student is encouraged to contact the faculty member immediately regarding the absences and to provide verification afterwards. The notification from the Center for Campus Life does not excuse a student from class, assignments, and/or any other course requirements. The notification is provided as a courtesy.
+
+<li><b>Students with Disabilities</b>. Any student who because of a disability may require special arrangements in order to meet course requirements should contact the instructor as soon as possible to make any necessary accommodations. Student should present appropriate verification from AccessTECH. No requirement exists that accommodations be made prior to completion of this approved university procedure.
+
+<li><b>Civility in the Classroom</b>. It is expected that everyone will behave
+in a manner that is conducive to learning. One common disruption is cell
+phones. Please turn these off in class. 
+
+<li><b>Academic Integrity</b>. Is assumed and expected at all times. Students are
+advised to acquaint themselves with the <a href="http://www.depts.ttu.edu/studentjudicialprograms/conductcode.php">Code of Student Conduct</a>.
+
+<p>
+<i> It is the aim of the faculty of Texas Tech University to foster a spirit of complete honesty and a high standard of integrity. The attempt of students to present as their own any work that they have not honestly performed is regarded by the faculty and administration as a serious offense and renders the offenders liable to serious consequences, possibly suspension.</i>
+
+<li><b>Collaboration</b>. My specific policies are as follows.
+  <ul>
+  <li><u>Homeworks</u>: Discussion with peers regarding material/concepts covered in the
+  course is permitted, and is encouraged since it usually leads to greater comprehension. However, each person must write up his/her own
+  solution to a particular problem, and not simply copy it from someone else.
+  <li><u>Tests</u>: Any form of collaboration in tests, including trying to see
+  what the person next to you is writing, is strictly forbidden and will not be tolerated.  
+</ul>
+ 
+
+</ul>
+
+
+
+
+<hr>
+<a href="#top">top of page</a><br>
+<br>
+
+</body>
+
+</html>
+
+
+
+<!-- #########################################
+
+
+-->

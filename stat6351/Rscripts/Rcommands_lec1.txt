@@ -1,0 +1,96 @@
+#################################
+### R commands used in Lecture 1:
+#################################
+"<==" denotes explanation of the command.
+
+## Install R (or RStudio) on your computer ##
+## double click on R-icon to start R ##
+
+### Make sure that you have internet connection before using the package "quantmod".
+
+library(quantmod) or require(quantmod)  <=== load the package "quantmod"
+getSymbols("AAPL") <=== get daily Apple stock data from Yahoo Finance. The default starting date is 2007-01-03.
+dim(AAPL)          <=== find the size of the data downloaded
+head(AAPL)         <=== show the first 6 rows of data
+tail(AAPL)         <=== show the last 6 rows of data
+chartSeries(AAPL)  <=== plot Apple daily closing stock prices with trading volume
+       <== Daily closing prices do not adjusted for stock split. You can use adjusted closing price.
+chartSeries(AAPL[,6]) <== Column 6 of the object "AAPL" in R.
+chartSeries(AAPL[,6],theme="white")  <== Same as the previous command, but use "white" background for the plot.
+
+getSymbols("^VIX") <== load daily VIX index
+getSymbols("^TNX") <== load 10-year interest rate
+getSymbols("^GSPC") <== load S&P 500 index
+getSymbols("^IXIC") <== load NASDAQ index
+
+getSymbols("AAPL",from="2005-01-03",to="2013-12-31")  <== specify the data span
+
+getSymbols("UNRATE",src="FRED") <== Load U.S. monthly unemplyment rate from Federal Reserve Bank of St Louis.
+                     <== src stands for "source", FRED stands for Federal Reserve Economic Data.
+chartSeries(UNRATE) <== plot the U.S. monthly unemployment rate
+getSymbols("DEXUSEU",src="FRED") <== Load Dollar verus Euro daily exchange rates from FRED.
+chartSeries(DEXUSEU) <== plot the daily dollar-euro exchange rates.
+getSymbols("DEXJPUS", src="FRED") <== Load Japanese Yen and US Dollar exchange rates from FRED.
+
+
+### You can also use the following commands to load data from FRED.
+getSymbols.FRED("UNRATE",env=globalenv())
+
+### You should use your working directory ###
+library(fBasics)  or require(fBasics) <== Load the package "fBasics"
+da=read.table("m-ibm6708.txt",header=T)  <== Load data with header into R
+    <== header=T means the data file contains "names" for each column.
+    <== use header=F, if the data file contains no column names.
+dim(da)  <== Check dimension of the data (row = sample size, col = variables)
+head(da)   <== Print out the first 6 rows of the data object "da".
+tail(da) <== Print out the last 6 rows of the data object "da".
+ibm=da[,2]  or ibm=da$ibm <== Select the simple returns of IBM stock stored in Column 2.
+
+plot(ibm,type='l')  <== Plot the simple returns. Note that type is "ell" not 1.
+basicStats(ibm)     <== Compute the descriptive statistics of simple returns.
+libm=log(ibm+1)  <== Compute the IBM log returns
+basicStats(libm)  <== Compute descriptive statistics of log returns.
+
+t.test(ibm)   <== Perform t-test for mean being zero.
+t.test(ibm,alternative=c("greater"))  <== Perform one-sided test (Not shown in class)
+
+hist(ibm,nclass=40) <== Obtain histogram of IBM simple returns.
+d1=density(libm)  <== Compute density function of ibm log returns
+names(d1)   <== Find out the output variables of the command "density".
+plot(d1$x,d1$y,type='l')   <== Plot the sample density of log returns
+mu=mean(libm); s1 = sd(libm) <== compute the sample mean and standard deviation of IBM log returns.
+x=seq(-0.4,0.4,0.01) <=== create a sequence of real numbers from -0.4 to 0.4 with increment 0.01.
+y=dnorm(x,mean=mu,sd=s1) <=== obtain normal density with mean mu and standard deviation s1.
+lines(x,y,lty=2) <== impose a dashed line on the density plot for comparison with the normal density.
+  <== you can also use different colors in the plot. For example,
+  lines(x,y,col="red") will plot a red curve.
+
+da <- read.csv("d-vix0411.csv",header=T) ## read *.csv file
+
+tt <- skewness(libm)/sqrt(6/length(libm))  ## Test H_0: m3 =0 versus H_a: m3 not equal = 0.
+tt
+pv <- 2*(1-pnorm(tt))  ### Compute p-value (assuming tt is positive)
+pv
+
+tt <- kurtosis(libm)/sqrt(24/length(libm)) ## Testing excess kurtosis being zero
+tt
+
+normalTest(libm,method="jb")   <== Perform normality test.
+
+
+### Pearson correlation, Kendall's tau and Spearman's rho
+
+x = rnorm(1000)  <== Generate 1000 N(0,1) random numbers
+cor(x,x)   ### default, traditional Pearson correlation coefficient
+
+cor(x,exp(x))
+cor(x,exp(x),method="kendall")
+cor(x,exp(x),method="spearman")
+
+cor(x,exp(20*x))
+cor(x,exp(20*x),method="kendall")
+cor(x,exp(20*x),method="spearman")
+ 
+
+
+

@@ -1,0 +1,8 @@
+#################################
+### R commands used in Lecture 6:
+#################################
+Note the two scripts (under Rprograms) for this Lecture:
+
+* mvwindow.R: computes the moving windo estimate of volatility.
+* yz.R: computes the Yang & Zhang estimate of volatility.
+

@@ -1,0 +1,409 @@
+###############################################################################
+### R commands used in Lecture 10 (from Tsay):
+################################################################################
+
+> require(MTS)  ### Package used. You need to install it.
+> da=read.table("q-gdpun.txt",header=T)
+> head(da)
+> xt=da[,4:5]
+> MTSplot(xt)  #### Plot multiple time series on a page
+> tdx=da[,1]+da[,2]/12
+> MTSplot(xt,tdx)  ## with actual calendar date
+> ccm(xt)
+> rt=diffM(xt)  ### differecing all series
+> ccm(rt)  ### Cross-correlation matrices
+> mq(rt,lag=10)
+> data("mts-examples",package="MTS")
+> head(qgdp)
+> gdp=log(da[,3:5])  ## pick up the GDP series 
+> zt=cbind(gdp$ca,gdp$us)
+> MTSplot(zt)
+> gt=diffM(zt)
+> VARorder(gt)  ### Order specification 
+> m1=VAR(gt,3)  ### Fit a VAR(3) model
+> MTSdiag(m1)  ### Model checking
+> VARpred(m1,4) ### prediction. 1-step to 4-step forecasts.
+
+#### Co-integration and pairs trading
+> da=read.table("d-bhp0206.txt",header=T)
+> da1=read.table("d-vale0206.txt",header=T)
+> bhp=log(da$adjclose)
+> vale=log(da1$adjclose)
+> m1=lm(bhp~vale)
+> wt=bhp-0.717*value
+> plot(wt,type='l')
+> abline(h=c(1.82)
+> abline(h=c(1.85),col="red")
+> abline(h=c(1.79),col="blue")
+
+
+**** For those interested in co-integration tests
+> library(urca)
+> help(ca.jo)  # Johansen's co-integration test
+
+> da=read.table("d-bhp0206.txt",header=T)
+> da1=read.table("d-vale0206.txt",header=T)
+> head(da)
+  Mon day year  open  high   low close volume adjclose
+1   7   1 2002 11.80 11.92 11.55 11.60 156700     8.39
+....
+6   7   9 2002 12.25 12.65 12.25 12.60 142000     9.12
+> head(da1)
+  Mon day year  open  high   low close  volume adjclose
+1   7   1 2002 27.60 27.60 27.10 27.16 2307600     1.89
+....
+6   7   9 2002 27.05 27.55 27.05 27.30 2534400     1.90
+> tail(da1)
+    Mon day year  open  high   low close   volume adjclose
+941   3  24 2006 44.90 45.52 44.45 45.28 15496800    10.94
+ .....
+946   3  31 2006 47.83 48.64 47.51 48.53 10900000    11.73
+> tail(da)
+    Mon day year  open  high   low close  volume adjclose
+941   3  24 2006 37.35 37.75 37.12 37.42 2251200    36.17
+ ....
+946   3  31 2006 39.62 40.19 39.22 39.85 3045900    38.52
+> dim(da)
+[1] 946   9
+
+> bhp=log(da[,9])
+> vale=log(da1[,9])
+> plot(bhp,type='l')
+> plot(vale,type='l')
+> m1=lm(bhp~vale)
+> summary(m1)
+
+Call:
+lm(formula = bhp ~ vale)
+
+Residuals:
+      Min        1Q    Median        3Q       Max 
+-0.151818 -0.028265  0.003121  0.029803  0.147105 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 1.822648   0.003662   497.7   <2e-16 ***
+vale        0.716664   0.002354   304.4   <2e-16 ***
+---
+Residual standard error: 0.04421 on 944 degrees of freedom
+Multiple R-squared: 0.9899,     Adjusted R-squared: 0.9899 
+F-statistic: 9.266e+04 on 1 and 944 DF,  p-value: < 2.2e-16 
+
+> bhp1=ts(bhp,frequency=252,start=c(2002,127))
+> vale1=ts(vale,frequency=252,start=c(2002,127))
+> plot(bhp1,type='l')
+> plot(vale1,type='l')
+> x=cbind(bhp,vale)
+> m1=ar(x)
+> m1$order
+[1] 2
+> m2=ca.jo(x,K=2)
+> summary(m2)
+
+###################### 
+# Johansen-Procedure # 
+###################### 
+
+Test type: maximal eigenvalue statistic (lambda max) , with linear trend 
+
+Eigenvalues (lambda):
+[1] 0.0406019854 0.0000101517
+
+Values of teststatistic and critical values of test:
+
+          test 10pct  5pct  1pct
+r <= 1 |  0.01  6.50  8.18 11.65
+r = 0  | 39.13 12.91 14.90 19.19
+
+Eigenvectors, normalised to first column:
+(These are the cointegration relations)
+
+           bhp.l2  vale.l2
+bhp.l2   1.000000 1.000000
+vale.l2 -0.717784 2.668019
+
+Weights W:
+(This is the loading matrix)
+
+            bhp.l2       vale.l2
+bhp.d  -0.06272119 -2.179372e-05
+vale.d  0.03303036 -3.274248e-05
+
+> m3=ca.jo(x,K=2,type=c("trace"))
+> summary(m3)
+
+###################### 
+# Johansen-Procedure # 
+###################### 
+
+Test type: trace statistic , with linear trend 
+
+Eigenvalues (lambda):
+[1] 0.0406019854 0.0000101517
+
+Values of teststatistic and critical values of test:
+
+          test 10pct  5pct  1pct
+r <= 1 |  0.01  6.50  8.18 11.65
+r = 0  | 39.14 15.66 17.95 23.52
+
+Eigenvectors, normalised to first column:
+(These are the cointegration relations)
+
+           bhp.l2  vale.l2
+bhp.l2   1.000000 1.000000
+vale.l2 -0.717784 2.668019
+
+Weights W:
+(This is the loading matrix)
+
+            bhp.l2       vale.l2
+bhp.d  -0.06272119 -2.179372e-05
+vale.d  0.03303036 -3.274248e-05
+
+> wt=bhp-0.718*vale
+> acf(wt)
+> pacf(wt)
+> m4=arima(wt,order=c(2,0,0))
+> m4
+
+Call:
+arima(x = wt, order = c(2, 0, 0))
+
+Coefficients:
+         ar1     ar2  intercept
+      0.8050  0.1215      1.820
+s.e.  0.0323  0.0325      0.008
+
+sigma^2 estimated as 0.000333:  log likelihood = 2444.26,  aic = -4880.52
+> tsdiag(m4)
+> plot(wt,type='l')
+
+
+###############################################################################
+### R commands used in Lecture 10 (from Trindade):
+################################################################################
+require(MTS)  ### Package used. You need to install it.
+
+###################################
+### Fig 1: Basic plotting
+###################################
+da=read.table("../Datasets/q-gdpun.txt",header=T)
+#head(da)
+xt=da[,4:5]
+#MTSplot(xt)  #### Plot multiple time series on a page
+tdx=da[,1]+da[,2]/12
+#pdf(file="../Lectures/Plots/Lec10-Fig1a.pdf", pointsize=12, paper="a4r",width=0,height=0)
+MTSplot(xt,tdx)  ## with actual calendar date
+dev.off()
+
+### examine sumamry stats for the diff series
+zt=diffM(xt)
+#pdf(file="../Lectures/Plots/Lec10-Fig1b.pdf", pointsize=12, paper="a4r",width=0,height=0)
+MTSplot(zt)
+dev.off()
+ccm(zt) 
+mq(zt,lag=10)
+#pdf(file="../Lectures/Plots/Lec10-Fig1c.pdf", pointsize=12, paper="a4r",width=0,height=0)
+par(mfrow=c(2,2))
+acf(zt[,1], main="Correlations: gdp", ylim=c(-1,1))
+ccf(zt[,1],zt[,2], main="Cross-Correlations: gdp with unemp", lag.max=10, ylim=c(-1,1))
+ccf(zt[,2],zt[,1], main="Cross-Correlations: unemp with gdp", lag.max=10, ylim=c(-1,1))
+acf(zt[,2], main="Correlations: unemp", ylim=c(-1,1))
+dev.off()
+
+
+##################################
+### Fig 2: Model fitting, prediction, IRFs
+##################################
+x=read.table("Datasets/q-gdpun.txt",header=T)
+z=x[,4:5]
+
+### plot the bivariate series
+MTSplot(z)
+
+### find optimal VAR order
+VARorder(z, maxp = 13)
+#selected order: aic = 4
+#selected order: bic = 2
+#selected order: hq = 3
+### Fit VAR(2) and then refine it by omitting coeffs with t-ratio<1.96,
+m1=VAR(z, p = 2, output = T, include.mean = T)
+m2=refVAR(m1,thres=1.96)
+
+### Check LB goodness of fit.
+### Must adjust df by setting: adj=p*k^2 for a k-dim VAR(p).
+### In general: adj is the number of non-zero VAR coeffts.
+### Here: p=2=k implies adj=2^3=8, but one coef=0, so adj=7.
+### All p-values low, so not a good fit...
+MTSdiag(m2, adj= 7)
+
+### Forecast 3-steps ahead.
+VARpred(m2, h=3)
+
+### Get irf’s and plot them manually (canned plot hard to control...)
+### Summary: 1 unit change in GDP makes Unemp dip 3-4 quarters later.
+out=VARMAirf(m2$Phi,m2$Sigma)
+psi11=out$irf[1,]; psi21=out$irf[2,]; psi12=out$irf[3,]; psi22=out$irf[4,]
+#pdf(file="Plots/Lec10-Fig2.pdf", pointsize=12, paper="a4r",width=0,height=0)
+par(mfcol=c(2,2))
+x=seq(0, length(psi11)-1); miny=min(out$irf); maxy=max(out$irf)
+plot(x,psi11, type="l", ylab="IRF", xlab="lag", main="GDP:GDP", ylim=c(miny,maxy))
+plot(x,psi21, type="l", ylab="IRF", xlab="lag", main="Unemp:GDP", ylim=c(miny,maxy))
+plot(x,psi12, type="l", ylab="IRF", xlab="lag", main="GDP:Unemp", ylim=c(miny,maxy))
+plot(x,psi22, type="l", ylab="IRF", xlab="lag", main="Unemp:Unemp", ylim=c(miny,maxy))
+dev.off()
+
+###################################
+### Fig 3: Co-integration and pairs trading
+###################################
+da=read.table("../Datasets/d-bhp0206.txt",header=T)
+da1=read.table("../Datasets/d-vale0206.txt",header=T)
+# cointegration plot
+bhp.price  = da$adjclose
+vale.price = da1$adjclose
+zt=10+scale(cbind(bhp.price,vale.price))
+xt=seq(1:length(bhp.price))
+#pdf(file="Plots/Lec10-Fig3.pdf", pointsize=12, paper="a4r",width=0,height=0)
+plot(xt, zt[,1], lty=1, type="l", ylab="", xlab="time", lwd=2,
+     main="Time series plots: BHP and VALE")
+lines(xt, zt[,2], lty=2, col="blue", lwd=2)
+dev.off()
+
+
+#####################################################################
+### Pairs Trading Example
+### Goes thru all the steps in VECM modeling: coint, testing, estimate, predict.
+####################################################################
+library("urca")
+library("tsDyn")
+
+### Read in data and plot
+da=read.table("../Datasets/d-bhp0206.txt",header=T)
+da1=read.table("../Datasets/d-vale0206.txt",header=T)
+#head(da)
+bhp=log(da[,9])
+vale=log(da1[,9])
+par(mfrow=c(2,1))
+plot(bhp,type='l')
+plot(vale,type='l')
+
+### Assess suitability for Pairs Trading
+x=cbind(bhp,vale)
+m1=lm(bhp~vale)
+summary(m1)
+
+#Call:
+#lm(formula = bhp ~ vale)
+#
+#Coefficients:
+#            Estimate Std. Error t value Pr(>|t|)    
+#(Intercept) 1.822648   0.003662   497.7   <2e-16 ***
+#vale        0.716664   0.002354   304.4   <2e-16 ***
+#---
+#Residual standard error: 0.04421 on 944 degrees of freedom
+#Multiple R-squared: 0.9899,     Adjusted R-squared: 0.9899 
+#F-statistic: 9.266e+04 on 1 and 944 DF,  p-value: < 2.2e-16 
+
+### Carry out Johansen's co-integration test:
+var.order=ar(x)$order
+m2=ca.jo(x, K=var.order, ecdet = "none", spec=c("transitory"))
+summary(m2)
+
+###################### 
+# Johansen-Procedure # 
+###################### 
+#Test type: maximal eigenvalue statistic (lambda max) , with linear trend 
+#Eigenvalues (lambda):
+#[1] 0.0406019854 0.0000101517
+
+#Values of teststatistic and critical values of test:
+#          test 10pct  5pct  1pct
+#r <= 1 |  0.01  6.50  8.18 11.65
+#r = 0  | 39.13 12.91 14.90 19.19
+
+#Eigenvectors, normalised to first column:
+#(These are the cointegration relations)
+
+#           bhp.l2  vale.l2
+#bhp.l2   1.000000 1.000000
+#vale.l2 -0.717784 2.668019
+
+#Weights W:
+#(This is the loading matrix)
+
+#            bhp.l2       vale.l2
+#bhp.d  -0.06272119 -2.179372e-05
+#vale.d  0.03303036 -3.274248e-05
+
+### Examine wt (suggests AR(2))
+wt=bhp-0.718*vale
+#pdf(file="../Lectures/Plots/Lec10-Fig4.pdf", pointsize=12, paper="a4r",width=0,height=0)
+split.screen(figs=c(2,1))
+screen(1)
+split.screen(figs=c(1,2))
+screen(3)
+acf(wt)
+screen(4)
+pacf(wt)
+screen(2)
+ts.plot(wt)
+dev.off()
+
+m4=arima(wt,order=c(2,0,0))
+
+#Coefficients:
+#         ar1     ar2  intercept
+#      0.8050  0.1215      1.820
+#s.e.  0.0323  0.0325      0.008
+#
+#sigma^2 estimated as 0.000333:  log likelihood = 2444.26,  aic = -4880.52
+
+### No problems detected in resids
+tsdiag(m4)
+
+### VECM ftn from package tsDYn estimates & predicts VECM:
+### lags=p-1 from the VAR(p), r=# coint relations, include = one of (none, const, trend).
+m5 = VECM(x, lag=1, r=1, estim="ML", include ="const")
+summary(m5)
+#############
+###Model VECM 
+#############
+#Full sample size: 946 	End sample size: 944
+#Number of variables: 2 	Number of estimated slope parameters 8
+#AIC -14875.77 	BIC -14832.12 	SSR 0.8188267
+#Cointegrating vector (estimated by ML):
+#   bhp      vale
+#r1   1 -0.717784
+
+#              ECT                Intercept          bhp -1            
+#Equation bhp  -0.0627(0.0146)*** 0.1159(0.0266)***  -0.1149(0.0367)** 
+#Equation vale 0.0330(0.0169).    -0.0584(0.0308).   0.0528(0.0425)    
+#              vale -1           
+#Equation bhp  0.0692(0.0320)*   
+#Equation vale 0.0452(0.0371)    
+
+### predict fitted VECM 3 steps ahead
+predict(m5, n.ahead=3)
+#         bhp     vale
+#947 3.650391 2.465768
+#948 3.648675 2.469617
+#949 3.647362 2.473280
+
+####################################################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

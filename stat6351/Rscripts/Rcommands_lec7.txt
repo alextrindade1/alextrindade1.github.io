@@ -1,0 +1,48 @@
+#################################
+### R commands used in Lecture 7:
+#################################
+> require(qunatmod)
+> getSymbols("SPY",from="2003-01-03",to="2017-04-30")
+> head(SPY)
+> rt = diff(log(as.numeric(SPY[,6])))
+> source("mvwindow.R")
+> mvwindow(rt,63)
+> mvwindow(rt,126)
+
+### Comamnds for the GM and SP example are in the lecture note.
+
+### R package for the genreal Threshold AR models is TSA with command tar.
+### R package for Markov switching models is MSwM with command msmFit.
+
+> library(nnet)   % Load neural networks package
+> da=read.table("m-ibmln2699.txt") %%% Monthly  IBM  log returns
+> dim(da)
+[1] 888   1
+#### Use the first 864 data in training and the last 24 data points for forecasting
+> x=da[,1]
+> y=x[4:864]
+> ibm.x=cbind(x[3:863],x[2:862],x[1:861])
+> ibm.nn=nnet(ibm.x,y,size=2,linout=T,skip=T,maxit=10000)
+> summary(ibm.nn)
+a 3-2-1 network with 14 weights
+options were - skip-layer connections  linear output units 
+  b->h1  i1->h1  i2->h1  i3->h1    # Coefficients for the h1 (First node of Hidden layer)
+-368.93  568.82 -295.27 -885.04 
+  b->h2  i1->h2  i2->h2  i3->h2    # coefficients for the h2.
+  91.71   40.63 -181.32 -218.14 
+   b->o   h1->o   h2->o   i1->o   i2->o   i3->o  # Coefficients for output node.
+   1.01   -3.17    3.25    0.16    0.07   -0.03 
+> sse=sum((y-predict(ibm.nn,ibm.x)^2))  # Compute sum of squares of residuals.
+> sse
+[1] -1483.777
+> ibm.p=cbind(x[864:887],x[863:886],x[862:885])
+> yh=predict(ibm.nn,ibm.p)   # Prediction
+> yo=x[865:888]
+> ssfe=sum((yo-yh)^2)  # Compute sum of squares of forecast errors.
+> ssfe
+[1] 2125.665
+> 
+**** You can run the backtest using neural networks ("backnnet")
+> source("backnnet.R")
+> m1=backnnet(ibm.x,y,840) # here 840 is the starting forecast origin.
+

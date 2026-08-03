@@ -1,0 +1,162 @@
+#################################
+### R commands used in Lecture 4:
+#################################
+### Linear Regression in R
+m1 <- lm(y3~y1)  ## Fit linear regression y3 = alpha + beta*y1 + error
+summary(m1)   ### Summary statistics of the fit
+ts.plot(m1$residuals ### Residual plot
+m2 <- lm(y3~-1+y1) ## Fit the linear regression y3 = beta*y1 + error 
+
+
+### The followings are also available in Rcommands_lec3.txt
+### Regression models with time series errors
+### You may use the weekly data: w-gs1n36299.txt on the lecture note too.
+### The same procedure applies. [The AR order of the residuals would become 6.]
+###
+> da=read.table("m-tb3n6.txt",header=T)
+> tb3=da[,3]
+> tb6=da[,4]
+> m7=lm(tb6~tb3)
+> summary(m7)
+> names(m7)
+> ts.plot(m7$residuals)
+> acf(m7$residuals)
+> m8=ar(m7$residuals, mehtod="mle")
+> m8$order
+> m9=arima(tb6,order=c(3,0,0),xreg=tb3)
+> m9
+> tsdiag(m9)
+
+####
+####################
+### Handle outliers
+> names(m2a)
+ [1] "coef"      "sigma2"    "var.coef"  "mask"      "loglik"    "aic"      
+ [7] "arma"      "residuals" "call"      "series"    "code"      "n.cond"   
+[13] "nobs"      "model"    
+> which.min(m2a$residuals)
+[1] 23
+> i23 <- rep(0,819)
+> i23[23]=1
+> m2b <- arima(rate,order=c(11,0,0),xreg=i23)
+> m2b
+
+Call:
+arima(x = rate, order = c(11, 0, 0), xreg = i23)
+
+Coefficients:
+         ar1     ar2      ar3      ar4     ar5      ar6      ar7     ar8
+      1.0453  0.1298  -0.0485  -0.0219  0.0156  -0.1083  -0.0665  0.0610
+s.e.  0.0354  0.0524   0.0514   0.0508  0.0513   0.0509   0.0507  0.0508
+          ar9     ar10   ar11  intercept      i23
+      -0.0304  -0.0935  0.103     5.6981  -0.7710
+s.e.   0.0508   0.0506  0.035     0.4469   0.1362
+
+sigma^2 estimated as 0.03596:  log likelihood = 197.16,  aic = -366.32
+> c2 <- c(NA,NA,0,0,0,NA,0,0,0,NA,NA,NA,NA)
+> m2c <- arima(rate,order=c(11,0,0),xreg=i23,fixed=c2)
+Warning message:
+In arima(rate, order = c(11, 0, 0), xreg = i23, fixed = c2) :
+  some AR parameters were fixed: setting transform.pars = FALSE
+> m2c
+
+Call:
+arima(x = rate, order = c(11, 0, 0), xreg = i23, fixed = c2)
+
+Coefficients:
+         ar1     ar2  ar3  ar4  ar5      ar6  ar7  ar8  ar9     ar10    ar11
+      1.0458  0.0866    0    0    0  -0.1497    0    0    0  -0.1005  0.1032
+s.e.  0.0352  0.0422    0    0    0   0.0254    0    0    0   0.0415  0.0347
+      intercept      i23
+         5.6964  -0.8014
+s.e.     0.4404   0.1325
+
+sigma^2 estimated as 0.03615:  log likelihood = 195.06,  aic = -374.11
+> tsdiag(m2c,gof=24)
+> 
+> which.max(m2c$residuals)
+[1] 22
+> i22 <- rep(0,819)
+> i22[22]=1
+> x <- cbind(i22,i23)
+> c3 <- c(c2,NA)
+> m2d <- arima(rate,order=c(11,0,0),xreg=x,fixed=c3)
+Warning message:
+In arima(rate, order = c(11, 0, 0), xreg = x, fixed = c3) :
+  some AR parameters were fixed: setting transform.pars = FALSE
+> m2d
+
+Call:
+arima(x = rate, order = c(11, 0, 0), xreg = x, fixed = c3)
+
+Coefficients:
+         ar1     ar2  ar3  ar4  ar5      ar6  ar7  ar8  ar9     ar10    ar11
+      1.0747  0.0496    0    0    0  -0.1375    0    0    0  -0.0938  0.0927
+s.e.  0.0349  0.0420    0    0    0   0.0250    0    0    0   0.0419  0.0350
+      intercept     i22      i23
+         5.6993  1.1573  -0.2809
+s.e.     0.4328  0.1411   0.1400
+
+sigma^2 estimated as 0.03339:  log likelihood = 227.52,  aic = -437.04
+> tsdiag(m2d,gof=24)
+> 
+#############################################
+###### New 
+#############################################
+
+### Additional type of financial time series
+require(quantmod)
+getSymbols("^VIX") ## VIX index
+chartSeries(VIX)
+getSymbols("^GSPC") ## S&P 500 indx
+chartSeries(GSPC)
+sp <- as.numeric(GSPC[,6])
+ts.plot(sp)
+rtn <- diff(log(sp))
+ts.plot(rtn)
+acf(rtn)
+acf(rtn^2)
+pacf(rtn^2)
+Box.test(rtn^2,lag=10,type='Ljung')
+
+### Existence of large outliers (jumps)
+da <- read.table("d-cdsJPM.txt",header=F)
+jpm <- da[,2]
+ts.plot(jpm)
+ts.plot(diff(jpm))
+
+### Volatility modelling
+require(fGarch)
+da <- read.table("m-intc7303.txt",header=T)
+intc <- da[,2]
+ts.plot(intc)
+acf(intc)
+Box.test(intc,lag=10,type='Ljung')
+acf(intc^2)
+Box.test(intc^2,lag=10,type='Ljung')
+
+m1 <- garchFit(~garch(1,1),data=intc,trace=F) ## Normal distribution
+summary(m1)
+plot(m1)  ### There are 13 possible choices.
+s1 <- volatility(m1)
+ts.plot(s1)
+predict(m1,5)
+
+m2 <- garchFit(~garch(1,1),data=intc,trace=F,cond.dist="std") ## Student-t dist
+summary(m2)
+plot(m2)
+
+da <- read.table("sp500.txt")
+sp <- da[,1]
+ts.plot(sp)
+pacf(sp)
+m3 <- arima(sp,order=c(3,0,0))
+acf(m3$residuals^2)
+Box.test(m3$residuals^2,lag=10,type='Ljung')
+m4 <- garchFit(~arma(3,0)+garch(1,1),data=sp,trace=F)
+summary(m4)
+plot(m4)
+
+source("Igarch.R")  ## IGARCH model
+m5 <- Igarch(sp) ### special model used in RiskMetrics
+m6 <- Igarch(sp,include.mean=T)

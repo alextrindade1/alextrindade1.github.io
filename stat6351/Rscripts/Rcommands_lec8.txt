@@ -1,0 +1,292 @@
+#################################
+### R commands used in Lecture 8:
+#################################
+#**** High Frequency Financial Data *** 
+da=read.table("taq-jnj-t-oct4t152010.txt",header=T)
+source("hfrtn.R")
+source("hfchg.R")
+source("hfntra.R")
+m1=hfntra(da,5) ### To see the diurnal pattern in trading ctivities
+m2=hfchg(da) ### create price change series and duration between trades
+names(m2)
+chg=m2$pchange
+dur=m2$duration
+hist(chg,nclass=400)
+hist(chg,nclass=200,xlim=c(-0.04,0.04)) ## focus on price change between -0.04 and 0.04
+ts.plot(chg)
+ts.plot(chg[410000:418854]) ## select a time span for plotting
+### Frequency counts for price change categories
+idx <- c(1:418854)[chg == 0]
+length(idx)  ## Number of trades without price change
+idx <- c(1:418854)[chg <= -0.02]
+length(idx) 
+idx <- c(1:418854)[chg < 0]
+nchg <- chg[idx]
+jdx <- c(1:length(idx))[nchg >= -0.01]
+length(jdx)
+### intrad log returns
+m3=hfrtn(da,5) ## 5-minute log returns
+names(m3)
+acf(m3$rtn,lag.max=10)
+m4=hfrtn(da,0.1)  ## 0.1-minute log returns
+acf(m4$rtn,lag.max=10)
+
+#*** Fitting logistic linear regression **** Generalized linear models (glm).
+da=read.table("ibm91-ads.txt",header=T)
+da[1,]
+#  Ai Di Si
+#1  0  0  0
+da1=read.table("ibm91-adsx.txt",header=T)
+da1[1,]
+#  Vim1 Dim1   BAi Aim1 Dim1 Sim1
+#1    8  0.4 0.125    0      0    0
+Ai=da$Ai  # Select the variables
+Di=da$Di
+Aim1=da1$Aim1
+Dim1=da1$Dim1
+m1=glm(Ai~Aim1,family=binomial)
+# Fit a logistic linear regression 
+summary(m1)
+#
+#Coefficients:
+#            Estimate Std. Error z value Pr(>|z|)    
+#(Intercept) -1.05667    0.01142  -92.55   <2e-16 ***
+#Aim1         0.96164    0.01827   52.62   <2e-16 ***
+#---
+#(Dispersion parameter for binomial family taken to be 1)
+#
+#    Null deviance: 75805  on 59774  degrees of freedom
+#Residual deviance: 73021  on 59773  degrees of freedom
+#AIC: 73025
+ 
+di=Di[Ai==1]   #% Select the cases in which Ai = 1.
+dim1=Dim1[Ai==1]
+di=(di+abs(di))/2  #% Logistic regression works for 1 or 0, but di is coded 1 or -1.
+m2=glm(di~dim1,family=binomial)
+summary(m2)
+#Coefficients:
+#            Estimate Std. Error z value Pr(>|z|)    
+#(Intercept) -0.06663    0.01728  -3.855 0.000116 ***
+#dim1        -2.30693    0.03595 -64.171  < 2e-16 ***
+#---
+#(Dispersion parameter for binomial family taken to be 1)
+#
+#    Null deviance: 27335  on 19717  degrees of freedom
+#Residual deviance: 20039  on 19716  degrees of freedom
+#AIC: 20043
+
+#*** Implications of the fitted model ****
+exp(-.067)/(1+exp(-.067))
+#[1] 0.4832563
+exp(-.067-2.307)/(1+exp(-.067-2.307))
+#[1] 0.08517693
+exp(-.067+2.307)/(1+exp(-.067+2.307))
+#[1] 0.9037845
+
+
+
+#******* Fit a probit model ****
+#### Need the package MASS in R.
+#### The command is "polr".
+da=read.table("taq-cat-t-jan042010.txt",header=T)
+dim(da)
+head(da)
+da1=read.table("taq-cat-cpch-jan042010.txt",header=T)
+dim(da1)
+head(da1)
+### set up the variables
+vol=da$size/100
+cpch=da1[,1]
+pch=da1[,2]
+cf=as.factor(cpch) ### create categories 
+length(cf)
+y=cf[4:37715]
+y1=cf[3:37714]
+y2=cf[2:37713]
+vol=vol[2:37716]
+v2=vol[2:37713]
+cp1=pch[3:37714]
+cp2=pch[2:37713]
+cp3=pch[1:37712]
+#### fit the model
+require(MASS)
+m1=polr(y~v2+cp1+cp2+cp3+y1+y2,method="probit")
+summary(m1)
+yhat=m1$fitted.values
+print(yhat[1:5,],digits=3)
+
+
+### Simulation of Wiener processes
+T=1000; iter=2000
+x=matrix(rnorm(T*iter),T,iter)
+y=apply(x,2,cumsum)
+y=y/sqrt(T)
+cy=range(y)*1.1
+plot(y[,1],xlab='time',ylab='Wiener',type='l',ylim=cy)
+for (i in 2:iter){
+  lines(y[,i],col=i)
+}
+
+########################################################################
+### ACD Models for Caterpillar stock: Jan 4 to 8, 2010.
+########################################################################
+da=read.table("../Datasets/Tsay-IAFTS-2013/ch6data/taq-cat-t-jan04t082010.txt",header=T)
+head(da)
+#      DATE hour minute second PRICE SIZE
+#1 20100104    5     34     26 57.56  200
+#2 20100104    8      0      5 56.99  600
+#3 20100104    8     15     50 57.37  205
+
+####################################
+### Get adjusted durations manually
+####################################
+### Get time in seconds and create indicators of opening, lunch, close
+sec=3600*da$hour+60*da$minute+da$second 
+ist=3600*9+30*60; end=3600*16
+lunch=3600*12
+#length(sec) # 155267
+idx=c(1:length(sec))[sec < ist] # before market opens
+jdx=c(1:length(sec))[sec > end] # after market closes
+sec=sec[-c(idx,jdx)]       # normal trading hours only.
+#length(sec) # 155077
+dt=diff(sec)
+kdx=c(1:length(dt))[dt > 0] # Positive durations only
+#length(kdx) # 37674
+ti=sec[2:length(sec)]
+dt=dt[kdx]
+ti=ti[kdx]
+### create regressors to adjust dt
+st=3600*6.5
+g1=(ti-lunch)/st
+gt=cbind(g1,g1^2)
+#
+### Linear model for log(durations): use it to form adjusted xt
+m2=lm(log(dt) ~ gt) 
+summary(m2)
+#Coefficients:
+#             Estimate Std. Error t value Pr(>|t|)    
+#(Intercept)  0.939622   0.006126  153.39   <2e-16 ***
+#gtg1         0.570215   0.017971   31.73   <2e-16 ***
+#gt          -2.165498   0.051115  -42.37   <2e-16 ***
+#---
+#Residual standard error: 0.7874 on 37671 degrees of freedom
+#Multiple R-squared:  0.04566,	Adjusted R-squared:  0.04561 
+#F-statistic: 901.2 on 2 and 37671 DF,  p-value: < 2.2e-16
+#
+fit=m2$fitted.values
+xt=dt/exp(fit)
+### look at the (positive) durations and the adjusted ones: (Delta t_i, xt)
+adj.dt = dt; adj.xt = xt; 
+par(mfrow=c(2,2))
+#plot(dt, type='l', xlab="index", ylab="", main="Unadjusted durations")
+#plot(xt, type='l', xlab="index", ylab="", main="Adjusted durations: manually")
+
+####################################
+### Get adjusted durations via ACDm
+####################################
+library(ACDm)
+
+### Append a "time" column to the data (da) so we can extract the durations
+###  using "computeDurations" below...
+library(dplyr); library(lubridate); library(tidyverse)
+year=rep(2010,dim(da)[1]); month=rep(1,dim(da)[1]); day=da$DATE-20100100
+aa=cbind(year,month,day,da)
+daa = aa %>% mutate(time = make_datetime(year, month, day, hour, minute, second))
+head(daa)
+#  year month day     DATE hour minute second PRICE SIZE                time
+#1 2010     1   4 20100104    5     34     26 57.56  200 2010-01-04 05:34:26
+#2 2010     1   4 20100104    8      0      5 56.99  600 2010-01-04 08:00:05
+#3 2010     1   4 20100104    8     15     50 57.37  205 2010-01-04 08:15:50
+#
+### Now compute durations so we can detrend using "diurnalAdj"
+dur=computeDurations(daa, open = "09:30:00", close = "16:00:00", rm0dur = T, type = "trade")
+head(dur)
+#                 time Ntrans durations
+#1 2010-01-04 09:30:01      8         1
+#2 2010-01-04 09:30:02      1         1
+#3 2010-01-04 09:30:03      2         1
+#
+### Adjusted durations:
+#pdf(file="../Lectures/Plots/Lec8-Fig7-fff-adj-dur.pdf", pointsize=12, paper="a4r",width=0,height=0)
+adj.fff <- diurnalAdj(dur, aggregation = "none", method = "FFF")
+dev.off()
+#plot(adj.fff$adjDur, type='l', xlab="index", ylab="", main="Adjusted durations: ACDm with FFF")
+adj.ssu <- diurnalAdj(dur, aggregation = "none", method = "supsmu")
+#plot(adj.ssu$adjDur, type='l', xlab="index", ylab="", main="Adjusted durations: ACDm with supsmu")
+
+### plot the 3 adjusted versions
+#pdf(file="../Lectures/Plots/Lec8-Fig6-adj-dur.pdf", pointsize=12, paper="a4r",width=0,height=0)
+par(mfrow=c(2,2))
+plot(adj.dt, type='l', xlab="index", ylab="", main="Unadjusted durations")
+plot(adj.xt, type='l', xlab="index", ylab="", main="Adjusted: regression splines")
+plot(adj.fff$adjDur, type='l', xlab="index", ylab="", main="Adjusted: ACDm with FFF")
+plot(adj.ssu$adjDur, type='l', xlab="index", ylab="", main="Adjusted: ACDm with supsmu")
+dev.off()
+
+### ACFs of durations:
+#pdf(file="../Lectures/Plots/Lec8-Fig8-acf-adj-dur.pdf", pointsize=12, paper="a4r",width=0,height=0)
+par(mfrow=c(2,2))
+acf(adj.dt, ylab="", main="ACF: Unadjusted durations")
+acf(adj.xt, ylab="", main="ACF: Adjusted durations (regression)")
+acf(adj.fff$adjDur, ylab="", main="ACF: Adjusted durations (FFF)")
+acf(adj.ssu$adjDur, ylab="", main="ACF: Adjusted durations (supsmu)")
+dev.off()
+#Box.test (adj.dt, lag = 5, type = "Ljung")
+
+### Fit EACD(1,1): ACF of res & res^2 looks white (but marginal)
+mod.eacd <- acdFit(durations = adj.fff, model = "ACD",
+            dist = "exponential", order = c(1,1), dailyRestart = 1)
+#Goodness of fit:                    
+#AIC            74694.515031
+#BIC            74720.125446
+#MSE                0.922094
+acf(mod.eacd$res, ylab="", main="ACF: Unadjusted durations")
+p1=Box.test(mod.eacd$res, lag = 5, type = "Ljung")$p.value
+p2=Box.test(mod.eacd$res, lag = 10, type = "Ljung")$p.value
+p3=Box.test(mod.eacd$res, lag = 10, type = "Ljung")$p.value
+c(p1,p2,p3)
+#[1] 0.05123770 0.04696923 0.04696923
+q1=Box.test(mod.eacd$res^2, lag = 5, type = "Ljung")$p.value
+q2=Box.test(mod.eacd$res^2, lag = 10, type = "Ljung")$p.value
+q3=Box.test(mod.eacd$res^2, lag = 10, type = "Ljung")$p.value
+c(q1,q2,q3)
+#[1] 0.8864377 0.2091346 0.2091346
+
+### Fit WACD(2,1): Much better than EACD!
+mod.wacd <- acdFit(durations = adj.fff, model = "ACD",
+            dist = "weibul", order = c(2,1), dailyRestart = 1)
+#Goodness of fit:
+#AIC            71607.34172
+#BIC            71650.02574
+#MSE                0.92184
+acf(mod.wacd$res, ylab="", main="ACF: Unadjusted durations")
+p1=Box.test(mod.wacd$res, lag = 5, type = "Ljung")$p.value
+p2=Box.test(mod.wacd$res, lag = 10, type = "Ljung")$p.value
+p3=Box.test(mod.wacd$res, lag = 10, type = "Ljung")$p.value
+c(p1,p2,p3)
+#[1] 0.3022282 0.4118444 0.4118444
+q1=Box.test(mod.wacd$res^2, lag = 5, type = "Ljung")$p.value
+q2=Box.test(mod.wacd$res^2, lag = 10, type = "Ljung")$p.value
+q3=Box.test(mod.wacd$res^2, lag = 10, type = "Ljung")$p.value
+c(q1,q2,q3)
+#[1] 0.6170599 0.1129991 0.1129991
+
+### Plot ACF of res & res^2 plus conditional mean
+mu.hat = mod.wacd$muHats
+ind = seq(1:length(mu.hat))
+#pdf(file="../Lectures/Plots/Lec8-Fig9-wacd.pdf", pointsize=12, paper="a4r",width=0,height=0)
+split.screen(figs=c(2,1))
+screen(1)
+split.screen(figs=c(1,2))
+screen(3)
+acf(mod.wacd$res, ylab="", main="ACF of WACD residuals")
+screen(4)
+acf(mod.wacd$res^2, ylab="", main="ACF of WACD residuals^2")
+screen(2)
+plot(adj.fff$adjDur[ind], type="l", lty=1, xlab="index", ylab="",
+     col="grey", main="Data and WACD conditional mean estimate")
+lines(mu.hat[ind], lty=1, col="blue", lwd=2)
+dev.off()
+#
+########################################################################
+########################################################################
