@@ -1,0 +1,324 @@
+<html>
+
+<head>
+<title>MATH 4342 - Trindade</title>
+</head>
+
+<body bgcolor=beige>
+<basefont size=3>  <!-- *** use 2 for printing *** -->
+<h2 align=center><font face="New Century Schoolbook" color=black>MATH
+4342 -- Mathematical Statistics I -- Fall 2009</font></h2>
+
+
+<br>
+
+<p>
+<h3>Instructor</h3>
+<a
+href="http://www.math.ttu.edu/~atrindad">Dr. Alex
+Trindade</a>, 211 Mathematics & Statistics Building. </br>
+E-mail: alex.trindade"at"ttu.edu; Phone: 742-2580 x 233. </br>
+Course Meets: 14:00 - 14:50 MWF, in Math 010.
+</br> 
+Office Hours: MWF 12:00 - 12:50, or by appointment.</br> 
+</ul> 
+
+
+
+<p>
+<h3>Text Books</h3> 
+<ul>
+<li>Required: <i>Mathematical Statistics with Applications, 7th ed.,</font></i> by
+Wackerly, Mendenhall, and Scheaffer, Duxbury Press, 2008. 
+<li>Recommended: Accompanying Students' Solutions Manual to odd problems (ISBN-13:
+978-0-495-38506-6). Available from the <a
+href="http://www.duxbury.com">publisher</a>: 1-800-423-0563.
+</ul>
+
+
+<p>
+<h3>Course Objectives</h3>
+The sequence MATH 4342-4343 develops the basic mathematical theory of
+statistical inference at an undergraduate level. Three semesters of
+calculus are prerequisite for
+this course (MATH 2350). MATH 4342 introduces the concepts and methods of
+probability and distribution theory. In MATH 4343, these tools are used
+to develop the theory of statistical estimation and hypothesis
+testing. MATH 4342 is a required course for minoring in <a
+href=http://www.math.ttu.edu/actuary/>Actuarial Science at TTU</a>, and forms
+the basis for the CAS/SOA Exam 1/P (Probability).
+  
+
+<p>
+<h3>Topics to be Covered</h3>
+Chapters 1-6 of the book: basics of discrete probability; discrete and
+continuous random variables and their distributions; calculation of
+means, variances, and other expectations; moment generating
+functions; multivariate probability distributions; variances and
+covariances of linear combinations of random variables; and finally
+methods for finding the distributions of functions of random variables.
+
+
+
+<p>
+<h3>Expected Learning Outcomes</h3>
+After completing this course the student should be able to:
+<ul>
+<li> Calculate probabilities of events using counting rules; calculate conditional
+probabilities; determine independence of events; apply the Law of Total
+Probability and Bayes' Rule.
+<li> Calculate probabilities, moments, and moment-generating functions for discrete random variables;
+recognize the following standard discrete distributions: binomial, geometric,
+hypergeometric, poisson.  
+<li> Calculate probabilities, moments, and moment-generating functions for continuous random variables;
+recognize the following standard continuous distributions: uniform, normal, gamma, beta.  
+<li> Calculate probabilities and moments for multivariate distributions; obtain
+marginal and conditional distributions; calculate covariance and correlation
+and determine independence of random variables; obtain expectations and
+variances for linear combinations of random variables. 
+<li> Find the distribution of a function of random variables using the methods
+of: distribution functions, transformations, and moment-generating functions;
+perform bivariate transformations using jacobians; calculate joint
+distributions and moments of order statistics.
+</ul>
+
+
+<p>
+<h3>Methods of Assessing the Expected Learning Outcomes</h3>
+The course grade will be determined
+from four (4) semester end-of-chapter tests, and a comprehensive final
+exam. The lowest grade on tests 1, 2, and 3, will be dropped (no make-up tests
+will be given for any of these). The
+tests are weighted as follows. 
+<ul>
+<li> Test 1, over chapters 1-2 (20%).
+<li> Test 2, over chapter 3 (20%).
+<li> Test 3, over chapter 4 (20%).
+<li> Test 4, over chapter 5 (20%).
+<li> Final Exam, comprehensive (40%): Wednesday Dec 16, 4:30 - 7:00 p.m.
+</ul>  
+
+Test dates will be announced at
+least one week beforehand. Special review session will be scheduled prior to
+each test. Course averages of at least 90%, 80%, 70%, and 60% will guarantee
+letter grades of A, B, C, D, respectively. Test solutions and grades will be posted on your eLearning tab, accessible through <a
+href="http://www.raiderlink.ttu.edu">raiderlink</a>.
+
+<p>
+<h3>Suggested Homework Problems</h3>
+In order to master the course material it's essential to work as many
+exercises as possible. Many test questions will either be drawn from
+the list of suggested homework problems below, or will be very
+similar in character. The following list of exercises from the text (corresponding 6th edition problems are in parenthesis) represents the
+kinds of problems you should be able to solve; do as many as
+possible. Some problems may require considerable effort in
+your part, but this is an important part of the learning process which
+cannot be replaced with simply looking up the solutions. Working in
+groups can be a very positive learning experience. It's crucial
+that you keep up with the pace of the course by steadily working
+through this list.
+<ul>
+<li><u>Chapter 1</u>: 17(15), 23(21), 25(23).   
+<li><u>Chapter 2</u> 
+<blockquote>
+1(1), 3(3), 7(5), 15(13), 17(15), 19(17), 27(19), 29(21), 31(23), 33(25), 35(27), 37(29), 41(33), 43(35), 51(41), 53(43), 57(47), 65(51), 71(57), 73(59), 77(61), 79(63), 81(65), 85(67), 93(69), 95(71), 99(75), 101(77), 103(79), 105(81), 111(87), 113(89), 118(94), 121(97), 125(99), 133(111), 135(113), 137(115), 139(117), 141(119), 149(127), 155(131). 
+</blockquote>
+<li><u>Chapter 3</u> 
+<blockquote>
+1(1), 3(3), 5(5), 9(7), 13(11), 19(13), 21(15),
+23(17), 25(19), 33(23), 35(25), 39(27), 41(29), 43(31),
+45(33), 55(39), 57(41), 63(47), 67(51), 69(53), 71(55), 73(57),
+81(63), 83(65), 93(75), 95(77), 97(79), 103(85), 107(87), 113(91), 115(93), 127(101),
+131(103), 133(105), 135(107), 139(111), 141(113), 145(115),
+147(117), 149(119), 153(121), 155(123), 171(135), 173(137),
+177(141), 179(143), 197(159), 205(165)
+</blockquote>
+<li><u>Chapter 4</u> 
+<blockquote>
+4.2: 11(5), 13(7), 15(9), 17(11), 19(13)<br>
+4.3: 21(15), 27(21), 29(23), 33(27)<br>
+4.4: 39(29), 41(31), 51(39), 57(45)<br>
+4.5: 59(47), 63(49), 65(51), 67(53), 69(55), 71(57), 75(61), 77(63)<br> 
+4.6: 91(71), 93(73), 97(77), 103(81), 105(83), 107(85), 109(87), 111(89)<br> 
+4.7: 123(91), 125(93), 127(95), 129(97) <br>
+4.9: 137(105), 139(107), 143(111), 145(113)<br>
+4.10: 147(115)<br>
+</blockquote>
+<li><u>Chapter 5</u> 
+<blockquote>
+5.2: 3(3), 5(5), 9(7), 11(9), 13(11), 15(13), 17(15)<br> 
+5.3: 19(17), 21(19), 23(21), 27(23), 29(25), 35(29), 37(31)<br> 
+5.4: 45(39), 47(41), 53(45), 55(47), 57(49), 59(51), 61(53), 71(61)<br>
+5.6: 73(63), 77(65), 79(67), 81(69)<br> 
+5.7: 89(75), 91(77), 93(79)<br>
+5.8: 103(87), 105(89), 107(91), 109(93)<br> 
+5.9: 119(99), 121(101), 123(103), 125(105)<br> 
+5.11: 133(113), 137(117)<br>
+</blockquote>
+<li><u>Chapter 6</u> 
+<blockquote>
+6.3: 1(1), 3(3), 5(5), 9(7), 11(9), 15(11), 17(13), 19(15)<br> 
+6.4: 25(21), 27(23), 29(25), 33(29), 35(31)<br>
+6.5: 39(33), 41(35), 43(37), 49(43), 53(45), 55(47), 57(49), 59(51)<br> 
+6.6: 63(53), 69(55), 71(57)<br> 
+6.7: 73(59), 75(61), 81(65), 87(67)<br> 
+</blockquote>
+</ul>  
+ 
+
+<h3>Other Policies</h3>
+In the unlikely event that you have to miss a test due to:
+<ul>
+<li> <i>illness/personal/family matters</i>, you must inform me in advance and
+provide a written excuse from the <a href="http://www.campuslife.ttu.edu">Center for Campus Life</a>;
+<li> <i>officially sanctioned University trips (e.g. sports)</i>, you
+must inform me in advance and provide a letter from the sponsoring department.
+</ul> 
+
+<p>
+Academic Integrity is assumed and is expected at all times. Academic dishonesty, of which the most
+serious offence is cheating on tests, will not be tolerated. Students are
+advised to acquaint themselves with the <a href="http://www.depts.ttu.edu/studentjudicialprograms/conductcode.php">Code of Student Conduct</a>.
+
+<p>
+<i> It is the aim of the faculty of Texas Tech University to foster a spirit of complete honesty and a high standard of integrity. The attempt of students to present as their own any work that they have not honestly performed is regarded by the faculty and administration as a serious offense and renders the offenders liable to serious consequences, possibly suspension.</i>
+
+<p>
+
+<p>
+Continuous formative assessment of the progress of the course will occur via
+ongoing communication between the instructor and the students. To this end, all
+students are encouraged to ask questions during class, and to seek the
+instructor's help out of class when needed.
+
+
+<hr>
+<a href="#top">top of page</a><br>
+<br>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+<!-- ##########################################################
+<h3>Course Structure and Grading</h3>
+Your course grade will be determined
+from four (4) semester end-of-chapter tests, and a comprehensive final
+exam, weighted as follows: 
+<ul>
+<li> Test 1 (over chapt. 2): worth 20%, Monday September 23. (Test 1
+Key: <a
+href="http://www.stat.ufl.edu/~trindade/sta4321/e1f02.pdf">4321</a>, <a
+href="http://www.stat.ufl.edu/~trindade/sta4321/e1gf02.pdf">5325</a>)
+
+<li> Test 2 (over chapt. 3): worth 20%, Monday October 14. (Test 2
+Key: <a
+href="http://www.stat.ufl.edu/~trindade/sta4321/e2f02.pdf">4321</a>, <a
+href="http://www.stat.ufl.edu/~trindade/sta4321/e2gf02.pdf">5325</a>)
+
+<li> Test 3 (over chapt. 4): worth 20%, Wednesday
+October 30. (Test 3
+Key: <a
+href="http://www.stat.ufl.edu/~trindade/sta4321/e3f02.pdf">4321/5325</a>)
+
+<li> Test 4 (over chapt. 5): worth 20%, to be given on Monday November
+25. (Test 4
+Key: <a
+href="http://www.stat.ufl.edu/~trindade/sta4321/e4f02.pdf">4321</a>, <a
+href="http://www.stat.ufl.edu/~trindade/sta4321/e4gf02.pdf">5325</a>)
+
+<li> Test 5 (over chapt. 6): (optional - instead of final, worth 25%,
+Thursday December 12. (Test 5 Key: <a
+href="http://www.stat.ufl.edu/~trindade/sta4321/e5f02.pdf">4321/5325</a>)
+
+<li> Final Exam (comprehensive but covering mostly chapt. 6): worth 40%, Wednesday <font color=red>December 18, 12:30-2:30 pm</font>.
+</ul>  
+Special review session will be scheduled prior to each test. The lowest score on Tests 1-4 will be dropped. As such, <b>no makeup
+tests will be given</b>. In the unlikely event that you have to miss a
+second test due to:
+<ul>
+<li> <i>Illness</i>, you must inform me in advance (if possible) and provide a written excuse from a physician.
+<li> <i>Officially sanctioned University activities (e.g. sports)</i>, you
+must inform me in advance and provide a letter from the sponsoring department.
+<li> <i>Personal/family matters</i>, you must inform me in advance (if
+possible) and provide a note from the Dean of Students (P202 Peabody Hall).
+</ul>  
+Students enrolled in STA 5325 will have slightly longer and/or harder
+tests. Course averages of at least 90%, 80%, and 70% will guarantee
+letter grades of A, B, C, respectively. 
+
+<p>
+<h3>Suggested Homework Problems</h3>
+In order to master the course material it's essential to work as many
+exercises as possible. Many test questions will either be drawn from
+the list of suggested homework problems below, or will be very
+similar in character. The following list of exercises from the text (corresponding 6th edition problems are in parenthesis) represents the
+kinds of problems you should be able to solve; do as many as
+possible. Some problems may require considerable effort in
+your part, but this is an important part of the learning process which
+cannot be replaced with simply looking up the solutions. Working in
+groups can be a very positive learning experience. It's crucial
+that you keep up with the pace of the course by steadily working
+through this list:
+<ul>
+<li><u>Chapter 1</u>: 15(11), 21(15), 25(19)   
+<li><u>Chapter 2</u>: 
+<blockquote>
+1(1), 3(3), 5(5), 13(9), 15(?), 17(13),
+19(15), 21(?), 23(17), 25(19), 27(?), 29(?), 33(?), 35(27), 41(?), 43(35), 47(37), 51(?), 57(47), 59(?), 61(51),
+63(53), 65(55), 67(57), 69(?), 71(59), 75(63), 77(?), 79(67),
+81(?), 87(?), 89(?), 94(78), 97(81), 99(83), 109(87), 111(89),
+113(91), 115(93), 117(95), 119(?), 127(105), 131(107)
+</blockquote>
+<li><u>Chapter 3</u>: 
+<blockquote>
+1(1), 3(3), 5(5), 7(7), 11(?), 13(?), 15(?),
+17(?), 19(?), 23(21), 25(23), 27(25), 29(27), 31(29),
+33(?), 39(35), 41(?), 47(43), 51(45), 53(?), 55(?), 57(51),
+63(57), 65(?), 75(?), 77(?), 79(?), 85(71), 87(?), 91(75), 93(?), 101(85),
+103(87), 105(89), 107(?), 111(95), 113(97), 115(99),
+117(?), 119(?), 121(103), 123(105), 135(117), 137(119),
+141(123), 143(125), 159(141), 165(147)
+</blockquote>
+<li><u>Chapter 4</u>: 
+<blockquote>
+5(3), 7(5), 9(7), 11(9), 13(?), 15(13), 21(17), 23(?), 27(?), 29(25),
+31(27), 39(29), 45(33), 47(35), 49(?), 51(?), 53(39), 55(41), 57(43),
+61(47), 63(?), 71(53),
+73(?), 77(59), 81(?), 83(?), 85(?), 87(67),
+89(?), 91(?), 93(73), 95(75), 97(?), 105(83), 107(?), 111(85), 113(?),
+115(89), 129(101), 133(105), 141(111) 
+</blockquote>
+<li><u>Chapter 5</u>: 
+<blockquote>
+3(3), 5(?), 7(5), 9(7), 11(?), 13(9),
+15(?), 17(13), 19(15), 21(?), 23(?), 25(?), 29(21),
+31(?), 39(29), 41(31), 45(33), 47(?), 49(?), 51(37),
+53(?), 61(43), 63(?), 65(47), 67(49), 69(?), 75(55), 77(57), 79(?),
+87(63), 89(65), 91(?), 93(?), 99(75), 101(?), 103(79), 105(?), 113(87), 117(91)
+</blockquote>
+<li><u>Chapter 6</u>: 
+<blockquote>
+1(1), 3(3), 5(5), 7(7), 9(9), 11(11),
+13(13), 15(15), 21(21), 23(23), 25(25), 29(29), 31(?),
+33(?), 35(33), 37(?), 41(?), 43(39), 47(?),
+49(43), 51(45), 53(?), 55(?), 57(?), 59(?), 61(49), 65(53), 67(55), 75(63), 87(73)
+</blockquote>
+
+</ul>  
+ 
+</body>
+
+</html>
+
+
+
+
+
+-->

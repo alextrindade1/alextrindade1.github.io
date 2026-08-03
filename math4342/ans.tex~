@@ -1,0 +1,203 @@
+\documentclass[12pt]{article}
+\parindent 0pt
+\oddsidemargin -.25in
+\evensidemargin -.25in
+\topmargin -.5in
+\textwidth 7in
+\usepackage{amsmath}
+
+\begin{document}
+
+\begin{center}\begin{Large}
+\textbf{Chapter 2 Answers}
+\end{Large}\end{center}
+\begin{description}
+\item[2.28] $3!=(3)(2)(1)=6$ ways. 
+\item[2.32] (a) $(5)(4)(2)=40$ cars. (b) $(40)(8)=320$ cars. 
+\item[2.36] (a) $\frac{1}{9}$. (b) $\frac{45}{504}$ ways. 
+\item[2.40] (2)(2)(2)=8.
+\item[2.50] $6!\left(\frac{1}{6}\right)^6$. 
+\item[2.58] $P(A)=.6$, and $P(A\mid M)=\frac{P(A\cap
+    M)}{P(M)}=\frac{.24}{.4}=.6$, so that A and M are indep. Also, $P(\bar{A})=.4$, and $P(\bar{A}\mid F)=\frac{P(\bar{A}\cap
+    F)}{P(F)}=\frac{.24}{.6}=.4$, so that $\bar{A}$ and F are indep.
+\item[2.60] (a) .125. (b) .875.
+\item[2.66] Using ``additive law'' for 3 events, and the fact that
+  $P(A_1A_2)=P(A_1A_3)$, and $P(A_2A_3)=0$ implies $P(A_1A_2A_3)=0$,
+  we have: $P(A_1\cup A_2\cup A_3)=P(A_1)+P(A_2)+P(A_3)-2P(A_1A_2)$. 
+\item[2.78] (a) 0.22. (b) $\frac{.03}{.22}$.
+\item[2.80] $P(AB)=1-P(\overline{AB})=1-P(\bar{A}\cup\bar{B})$.
+\item[2.86] $0.908$.
+\item[2.88] (a) $(.02)^3$. (b) $(.98)^3$.
+\item[2.94] $0.8704$.
+\item[2.114] $\frac{30}{44}$.
+\item[2.118] Let $Y$ be the event that we select $y$ defectives and $3-y$
+  nondefectives. Then
+  $P(Y=y)=\frac{\binom{2}{y}\binom{4}{3-y}}{\binom{6}{2}}$, for $y=0,1,2$.
+\item[2.128] Let $Y$ be the number of symptoms possessed by a
+  person. Then: $P(Y=0)=.4$, $P(Y=1)=.5$, $P(Y=2)=.1$ 
+\item[2.138] $\binom{5}{3}/\binom{8}{4}$.
+\end{description}
+
+\newpage
+\begin{center}\begin{Large}
+\textbf{Chapter 3 Answers}
+\end{Large}\end{center}
+\begin{description}
+\item[3.4] $P(Y=2)=.8^3$, $P(Y=0)=.072$, $P(Y=1)=.416$.
+\item[3.10] $E(Y)=2$, $E(1/Y)=.6417$, $E(Y^2-1)=4$, $V(Y)=1$.
+\item[3.14] With prob .3 the volume is 2,400. With prob .7 the volume
+  is 3,200. The mean is 2,960.
+\item[3.18] $p(0)=.81$, $p(1)=.18$, $p(2)=.01$, $\mu=.2$, $\sigma^2=.18$. 
+\item[3.22] $p(2)=\frac{1}{6}$, $p(3)=\frac{2}{6}$,
+  $p(4)=\frac{3}{6}$. $E(Y)=3.33$. The cost $C=2Y+8$, so that $E(C)=\$14.67$.
+\item[3.24] Mean cost is 13. Variance of cost is 41.
+\item[3.26] (a) $p(0)=\frac{16}{81}$, $p(1)=\frac{32}{81}$,
+  $p(2)=\frac{24}{81}$, $p(3)=\frac{8}{81}$, $p(4)=\frac{1}{81}$. (b)
+  $\frac{9}{81}$. (c) $\frac{4}{3}$. (d) $\frac{8}{9}$. 
+\item[3.28] Using the binomial tables: (a) .109, (b) .999, (c) .844, (d) .589. 
+\item[3.30] $P(Y\geq 1)=.884$, $P(Y\geq 2)=.572$.
+\item[3.36] (a) $P(Y\geq 1)=1-\binom{5}{0}(.1)^5=.99999$. (b) $n=3$.
+\item[3.40] $E(Y)=1$, $V(Y)=.9$.
+\item[3.52] $E(Y)=3.34$.
+\item[3.56] $\frac{1}{2}$.
+\item[3.64] $E(Y)=5$, so expect first success on 5th trial.
+\item[3.86] $E(Y)=100$, $V(Y)=1666.67$.
+\item[3.92] $\mu=2.4$, $\sigma^2=1.061$.
+\item[3.98] (a) .0818, (b) .9927, (c) .1277.
+\item[3.104] .01899.
+\item[3.108] (a) .004, (b) Yes. We suspect the region's rate is higher
+  than 3 per 200 fires.
+\item[3.116] $E(Y)=np$, $E(Y^2)=np^2(n-1)+np$, $V(Y)=npq$.
+\item[3.118] $E(Y)=\frac{1}{p}$, $E(Y^2)=\frac{1+q}{p^2}$, $V(Y)=\frac{q}{p^2}$.
+\item[3.134] $\frac{3}{4}$.
+\item[3.138] (a) $p(0)=.729$, $p(1)=.243$, $p(2)=.027$,
+  $p(3)=.001$. (c) $\mu=.3$, $\sigma=.52$. (d) .729 will be within one
+  standard deviation, and .972 within two. 
+\item[3.156] .104.
+\item[3.168] If Y is the number of people in favor, then
+  $Y\sim\mathrm{Bin}(n=2000,p=.5)$. Therefore, 1373 is 16.68 standard
+  deviations above the mean, and this value would be very unlikely to
+  occur for this distribution.
+\item[3.170] .96649.
+\end{description}
+
+\newpage
+\begin{center}\begin{Large}
+\textbf{Chapter 4 Answers}
+\end{Large}\end{center}
+\begin{description}
+\item[4.6] (b) $f(y)=2y\exp{\{-y^2\}},\ y>0$. (c) $e^{-4}$. (d) $(e^{-1}-e^{-4})/(1-e^{-4})$.
+\item[4.8] (b) \[ F(y)=\left\{\begin{array}{ll}0, & y<0\\
+      \frac{y^2}{2}, & 0\leq y\leq 1\\
+      2y-\frac{y^2}{2}-1, & 1\leq y\leq 2\\ 1, &
+      y>2. \end{array}\right. \]
+(c) 0.36. (d) 0.25. 
+\item[4.10] (a) $c=1/2$. (b) 
+\[ F(y)=\left\{\begin{array}{ll}0, & y<0\\
+      y-\frac{y^2}{4}, & 0\leq y\leq 2\\ 1, &
+      y>2. \end{array}\right. \]
+(d) $1/4$. (e) $1/4$.
+\item[4.14] $E(Y)=2/3,\ V(Y)=2/9$.
+\item[4.24] (a) $E(Y)=2/3,\ V(Y)=1/18$. (b) $E(X)=220/3,\ V(X)=20,000/9$. (c) $\frac{220}{3}\pm 2\sqrt{\frac{20,000}{9}}$.
+\item[4.46] (a) 0.3849, (b) 0.3159, (c) 0.3227, (d) 0.1586, (e) 0.3613.
+\item[4.52] 0.0730.
+\item[4.56] $(0.2266)^3$.
+
+\item[4.74] (a) $e^{-9/3.6}$, (b) $e^{-9/2.5}$.
+\item[4.76] $k=1/96$.
+\item[4.78] $C=-4\ln(0.05)$.
+\item[4.82] $0.05$.
+\item[4.84] $f(y)=(\frac{y}{4})e^{-y/2},\ y>0$.
+\item[4.86] $y=40,000$ lies 31.62 standard deviations above the mean
+  (unlikely to be observed).
+\item[4.88] $E(Y)=3/2,\ V(Y)=3/4$.
+\item[4.92] $0.8208$.
+\item[4.94] (a)  
+\[ F(y)=\left\{\begin{array}{ll}0, & y<0\\
+      3y^2-2y^3, & 0\leq y\leq 1\\ 1, &
+      y>1. \end{array}\right. \]
+(c) 0.396. 
+\item[4.96] $x=1-(.10)^{1/3}$.
+\item[4.104] (a) $m(t)=1/(1-\theta t)$, (b) $E(Y)=\theta,\ V(Y)=\theta^2$.
+\item[4.114] $12,351\leq Y\leq 37,649$.
+\item[4.136] $f(t)=\lambda e^{-t\lambda},\ t>0$.
+\end{description}
+
+\newpage
+\begin{center}\begin{Large}
+\textbf{Chapter 5 Answers}
+\end{Large}\end{center}
+\begin{description}
+\item[5.2] (a) $p(0,-1)=p(1,1)=p(1,2)=p(1,3)=p(2,2)=p(3,1)=\frac{1}{8}$,
+  $p(2,1)=\frac{2}{8}$, and the remaining probabilities are all
+  $0$. (b) $\frac{1}{2}$.
+\item[5.8] (a) $K=1$, (b) $\frac{2}{3}$.
+\item[5.10] (a) $\frac{7}{8}$, (b) $\frac{1}{2}$.
+\item[5.14] (a) $\frac{21}{64}$, (b) $\frac{1}{3}$.
+\item[5.18] (a) $p(-1)=p(3)=\frac{1}{8}$, $p(2)=\frac{2}{8}$,
+  $p(1)=\frac{4}{8}$. (b) $\frac{1}{4}$. 
+\item[5.22] (a) $f_1(y_1)=2y_1$, for $0\leq y_1\leq 1$,
+  $f_2(y_2)=2y_2$, for $0\leq y_2\leq 1$. (b) $\frac{1}{4}$. (c)
+  $f(y_1\mid y_2)=f_1(y_1)$. (d) $f(y_2\mid y_1)=f_2(y_2)$. (e) $\frac{9}{16}$.
+\item[5.24] (a) $\frac{1}{4}$, (b) $\frac{1}{2}$. 
+\item[5.26] (a) $\frac{3}{7}$, (b) $\frac{1}{3}$. 
+\item[5.32] (a) $f(y_1,y_2)=\frac{1}{y_2}$, for $0\leq y_2\leq y_1\leq
+  1$. (b) $\frac{1}{2}$. (c) $\frac{1}{2}$. 
+\item[5.40] No.
+\item[5.46] Dependent.
+\item[5.48] Dependent.
+\item[5.52] Dependent.
+\item[5.58] (a)
+  $p(y_1,y_2)=\binom{2}{y_1}(.2)^{y_1}(.3)^{y_2}(.8)^{1-y_1}(.7)^{1-y_2}$, for $y_1=0,1,2$ and $y_2=0,1$. (b) 0.864.
+\item[5.60] $\frac{7}{32}$.
+\item[5.62] (a) $\frac{2}{3}$, (b) $\frac{4}{9}$, (c) $0$.
+\item[5.64] (a) $\frac{2}{3}$, (b) $\frac{1}{18}$, (c) $0$.
+\item[5.66] (a) $E(Y_1)=\frac{4}{3}$, $E(Y_2)=\frac{1}{3}$. (b)
+  $V(Y_1)=\frac{2}{9}$, $V(Y_2)=\frac{1}{18}$. (c) 1, (d) $(.19,1.81)$. 
+\item[5.70] $\frac{1}{4}$.
+\item[5.76] $-\frac{1}{3}$.
+\item[5.78] $\mathrm{Cov}(Y_1,Y_2)=\frac{1}{40}$, so they are dependent.
+\item[5.88] (a) $E(X)=\frac{7}{3}$, $V(X)=.389$; (b) $E(Y_1+Y_2)=\frac{7}{3}$, $V(Y_1+Y_2)=.389$.
+\item[5.90] .3375.
+\item[5.94] $E(C)=66$, $V(C)=96$.
+\item[5.102] (a) .1109 (b) .0625.
+\item[5.104] (a) 66,960 (b) 128,209,600.
+\item[5.118] (a) $\alpha\beta$; (b) $\sigma=\sqrt{\alpha\beta(1+\beta)}$.
+\item[5.126] $\frac{5}{4}-\frac{3}{4}\ln 2$.
+\end{description}
+
+\newpage
+\begin{center}\begin{Large}
+\textbf{Chapter 6 Answers}
+\end{Large}\end{center}
+\begin{description}
+\item[6.4] (a) $f_U(u)=\frac{1}{12}\exp\{-(u-1)/12\},\ u\geq 1$. (b) $E(U)=13$.
+\item[6.8] $U\sim\mathrm{Gamma}(\alpha=\beta=1)$.
+\item[6.10] $f_U(u)=18u(1-u+u\ln u),\ 0\leq u\leq 1$.
+\item[6.14] (a) $f(y)=\alpha\beta^{\alpha}y^{-\alpha-1},\
+  y\geq\beta$. (b) $G(U)=\beta(1-U)^{-1/\alpha}$. 
+\item[6.16] (a) $f(w)=\frac{1}{2}w^{-1/2},\ 0\leq w\leq 1$. (b) $f(w)=2w,\ 0\leq w\leq 1$.
+\item[6.22] (a) $U\sim\mathrm{Exp}(\mathrm{mean}=\alpha)$. (b) $E(Y^k)=\Gamma(1+k/m)\alpha^{k/m}$.
+\item[6.24] $U\sim\mathrm{Exp}(\mathrm{mean}=2)$. 
+\item[6.30] (a) $U\sim\mathrm{Exp}(\mathrm{mean}=\theta)$. (b)
+  $E(Y)=\sqrt{\pi\theta}/2$. (b) $V(Y)=\theta(1-\pi/4)$.
+\item[6.34] $U\sim\mathrm{Gamma}(\alpha=1,\beta=2)\sim\chi^2(2)$. 
+\item[6.36] 0.0228.
+\item[6.40] $W\sim\mathrm{Gamma}(\alpha=n/2,\beta=2)\sim\chi^2(n)$.
+\item[6.42] $f_U(u)=ue^{-u^2/2},\ u\geq 0$.
+\item[6.44] (a)
+  $P(Y_1+Y_2=k)=\frac{(\lambda_1+\lambda_2)^k}{k!}e^{-(\lambda_1+\lambda_2)},\ k=1,2,\ldots$. (b) $P(Y_1=k\mid Y_1+Y_2=m)\sim\mathrm{Binomial}(n=m,p=\frac{\lambda_1}{\lambda_1+\lambda_2})$.
+\item[6.48] Let $U$ be the service time for two
+  cars. $U\sim\mathrm{Gamma}(\alpha=2,\beta=1/2), \Rightarrow\ P(U>1.5)=.20$. 
+\item[6.54] (a)
+  $f_{U,V}(u,v)=\frac{1}{\Gamma(\alpha_1)\Gamma(\alpha_2)\beta^{\alpha_1+\alpha_2}}u^{\alpha_1-1}(1-u)^{\alpha_2-1}v^{\alpha_1+\alpha_2-1}e^{-v/\beta},\ 0<u<1,\ v>0$.
+\item[6.58] (a) $g_1(u)=2(1-u),\ 0\leq u\leq 1$. (b) 1/18.
+\item[6.60] (a) 
+\item[6.72] 
+\item[6.74] 
+\item[6.82] 
+\item[6.86] 
+\end{description}
+
+
+\end{document}

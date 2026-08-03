@@ -1,0 +1,126 @@
+<html>
+
+<head>
+<title>Statistical Computing Software and Resources - Trindade</title>
+</head>
+
+<body bgcolor=white>
+<basefont size=3>  <!-- *** use 2 for printing *** -->
+<h2 align=center><font face="New Century Schoolbook"
+color=black>Statistical Computing Software and Resources</font></h2>
+
+<br>
+
+<h3>R</h3>
+R is free software available for download from the <a href="http://www.R-project.org/">R homepage</a> (click on "CRAN" on the left margin of the page). Download the Precompiled Binary Distribution for your operating system from a mirror near you. The online R documentation, via your default web browser, is obtained by typing "help.start()" on the window running R.
+
+<ul>
+<li> Introductory Material: 
+<ul>
+<li> New York Times <a href="NYTarticleR">article</a> from 2009 extolling the virtues of R.
+<li> Brief <a href="http://www.math.ttu.edu/~atrindad/stat5302-5303/Materials/RcodeTutorial.txt">R
+Tutorial</a>. 
+<li> Venables's Intro to R <a href="R-intro.pdf">manual</a> (2008). 
+<li> Douglas Bates's Intro to R <a href="Bates.pdf">slides</a> (2001). 
+<li> R Quick Reference <a href="R-refcard.pdf">Card</a>.
+<li> R Colors Reference <a href="http://research.stowers-institute.org/efg/R/Color/Chart/">Chart</a>.
+</ul>
+<li> Books & Manuals: 
+<ul>
+<li> <i>Introductory Statistics with R</i>, by Peter Dalgaard (Springer), 2002. 
+<li> <i>R Graphics</i>, by Paul Murrell (Chapman & Hall/CRC), 2005. 
+<li> <i>The R Book</i>, by Michael J. Crawley (Wiley), 2007. 
+<li> Julian Faraway's "Practical
+Regression and Anova using R" <a
+href="http://www.math.ttu.edu/~atrindad/stat5302-5303/Materials/Faraway-PRA.pdf">booklet</a>. This is a draft version of what has become: <i>Linear Models with R</i>, by Julian Faraway (Chapman & Hall/CRC), 2004. 
+<li> Laura Thompson's R (and S+) <a
+href="http://www.math.ttu.edu/~atrindad/stat5302-5303/Materials/ThompsonCDAmanual-R.pdf">manual</a> for categorical data analysis.
+</ul>
+<li> An R Overview of Some <a
+href="http://cran.r-project.org/web/views/">Major Topics</a> in Statistics. 
+
+<li> Time Series Analysis:
+<ul>
+<li> A detailed R overview of all of <a
+href="http://cran.r-project.org/web/views/TimeSeries.html">time series</a>. 
+<li> Diethelm Wurtz's <a href="Rmetrics.pdf">slides</a> describing the
+Rmetrics packages for finance and econometrics (2008). 
+<li> JSS 2008 <a href="VAR.pdf">paper</a> that describes package <b>vars</b>
+for vector autoregressive (VAR), structural VAR, and vector error correction
+(VECM) modeling.
+<li> Basic time series plotting <a
+href="http://www.math.ttu.edu/~atrindad/stat5379/PlottingExamples.txt">examples</a>. 
+<li> Smoothing <a
+href="http://www.math.ttu.edu/~atrindad/stat5379/SmoothingExamples.txt">examples</a>. 
+</ul>
+
+<li> Code Snipets for Applied Statistics (STAT 5302-5303):
+<ul>
+<li> <a
+href="http://www.math.ttu.edu/~atrindad/stat5302-5303/Materials/RcodeSampDistCLT.txt">Sampling
+distributions and Central Limit Theorem</a>. 
+<li> <a
+href="http://www.math.ttu.edu/~atrindad/stat5302-5303/Materials/RcodeTwoPopTtest.txt">Comparing two populations via two sample t-tests</a>. 
+<li> <a
+href="http://www.math.ttu.edu/~atrindad/stat5302-5303/Materials/RcodeANOVA.txt">One way and two way ANOVA</a>. 
+<li> <a
+href="http://www.math.ttu.edu/~atrindad/stat5302-5303/Materials/RcodeANCOVA.txt">ANCOVA
+with the Glue data and the Golf data</a>. 
+<li> <a
+href="http://www.math.ttu.edu/~atrindad/stat5302-5303/Materials/RcodeLinearReg.txt">Linear
+Regression: Simple (Computer data) and Mutliple (Peruvian Indian data)</a>. 
+<li> <a
+href="http://www.math.ttu.edu/~atrindad/stat5302-5303/Materials/RcodePoissonReg.txt">Poisson
+regression with the Horseshoe Crab data</a>. 
+<li> <a
+href="http://www.math.ttu.edu/~atrindad/stat5302-5303/Materials/RcodeMixedModels.txt">Mixed
+models, nesting, split-plots, repeated measures</a>. 
+</ul>
+</ul>
+
+
+
+<h3>MINITAB</h3>
+<ul>
+<li> The <a href="http://www.minitab.com/">Minitab homepage</a>.
+<li> Recommended book: <i>MINITAB Handbook</i>, by Ryan, Joiner, and Cryer, Duxbury-Thompson-Brooks/Cole, 2005.
+</ul>
+
+
+<h3>SPSS</h3>
+<ul>
+<li> The <a href="http://www.spss.com/">SPSS homepage</a>.
+<li> Recommended book: <i>Doing Data Analysis with SPSS</i>, by Carver & Nash, Duxbury-Thompson-Brooks/Cole, 2005.
+<li> Mixed models in SPSS <a href="SPSSMixed.ppt">slides</a>. 
+</ul>
+
+
+<h3>SAS</h3>
+<ul>
+<li>  <a href="Import_Excel_File_Into_SAS.pdf">Guide</a> for importing excel files into SAS. 
+<li> Recommended introductory book: <i>The Little SAS Book, A
+Primer</i>, Second Edition by Delwiche and Slaughter, SAS Institute Inc. 1998.
+<li> Many free resources are available at the <a
+href="http://www.sas.com/">SAS homepage</a>. In addition, SAS version 8 has a built in SAS Tutorial - Getting Started
+with SAS (R) Software that can be accessed from the Help > Getting Started
+with SAS Software items on the Menu Bar. 
+<li> Detailed procedure help manual with examples: <a
+href="http://v8doc.sas.com/sashtml/stat/index.htm">SAS/STAT User's Guide</a>. 
+<li> Comparison of R vs. SAS for <a href="MixedModels-RandSAScomparison.pdf">mixed models</a>. 
+<li> Repeated measures with <a href="SASProcMixed.pdf">Proc Mixed</a>. 
+</ul>
+
+
+<h3>General</h3>
+<ul>
+<li> Alan Agresti's categorical data analysis resources <a
+href="http://www.stat.ufl.edu/~aa/cda/software.html">website</a>.
+<li> R for SAS and SPSS users <a href="RforSAS&SPSSusers.pdf">(pdf manual)</a>. 
+</ul>
+
+
+
+</body>
+
+</html>
+
